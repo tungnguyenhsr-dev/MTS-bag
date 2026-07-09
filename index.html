@@ -41,10 +41,12 @@ ul{list-style:none}
   --space-2xl:112px;
 }
 
-/* ===== LANGUAGE TOGGLE SYSTEM ===== */
-[lang="en"]{display:none}
-body.show-en [lang="vi"]{display:none}
+/* ===== LANGUAGE TOGGLE SYSTEM (robust) ===== */
+body:not(.show-en) [lang="en"]{display:none !important}
+body.show-en [lang="vi"]{display:none !important}
 body.show-en [lang="en"]{display:block}
+/* inline vi/en pairs that should stay inline (stats, etc.) */
+body.show-en [lang="en"].inline,body:not(.show-en) [lang="vi"].inline{display:inline !important}
 
 /* ===== NAVIGATION ===== */
 nav{
@@ -390,6 +392,29 @@ footer a:hover{color:var(--gold)}
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-secondary{text-align:center}
 }
+.lang-toggle .globe{font-size:0.85em}
+
+/* ===== PLACEHOLDER IMAGE (tastecode: labeled, not fake) ===== */
+.ph-img{
+  aspect-ratio:4/3;width:100%;margin-bottom:var(--space-sm);
+  background:repeating-linear-gradient(45deg,#eee 0 12px,#e6e0d6 12px 24px);
+  border:1px solid var(--border);border-radius:2px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--muted);text-align:center;padding:8px;
+}
+.prod-card .ph-img{background:repeating-linear-gradient(45deg,#f0ece4 0 12px,#e8e1d4 12px 24px)}
+
+/* ===== MOTION: reveal on scroll (tastecode: subtle) ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .hero-visual{animation:none}
+}
+/* hero visual subtle pulse to feel alive */
+.hero-visual{animation:heroPulse 6s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{opacity:1}50%{opacity:0.82}}
 </style>
 </head>
 <body>
@@ -411,7 +436,7 @@ footer a:hover{color:var(--gold)}
       <a href="#quality" lang="en">Quality</a>
       <a href="#contact" lang="vi">Liên Hệ</a>
       <a href="#contact" lang="en">Contact</a>
-      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">EN 🌐</button>
+      <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">EN <span class="globe"></span></button>
       <a href="#contact" class="nav-cta" lang="vi">Bắt Đầu →</a>
       <a href="#contact" class="nav-cta" lang="en">Start →</a>
     </div>
@@ -420,7 +445,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== HERO ===== -->
 <section id="hero">
-  <div class="hero-content">
+  <div class="hero-content reveal">
     <span class="mono-label">01 — HERO</span>
     <div lang="vi">
       <h1 class="hero-h1">Gia Công Túi / Balo<br>Tại Việt Nam</h1>
@@ -439,12 +464,12 @@ footer a:hover{color:var(--gold)}
       <a href="#capabilities" class="btn-secondary" lang="en">View Capabilities →</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-num">6+</div><div class="stat-label" lang="vi">Thương Hiệu</div><div class="stat-label" lang="en">Brands</div></div>
-      <div><div class="stat-num">50K+</div><div class="stat-label" lang="vi">Sản Phẩm/Năm</div><div class="stat-label" lang="en">Units/Year</div></div>
-      <div><div class="stat-num">300</div><div class="stat-label" lang="vi">MOQ</div><div class="stat-label" lang="en">MOQ</div></div>
+      <div><div class="stat-num">6+</div><div class="stat-label inline" lang="vi">Thương Hiệu</div><div class="stat-label inline" lang="en">Brands</div></div>
+      <div><div class="stat-num">50K+</div><div class="stat-label inline" lang="vi">Sản Phẩm/Năm</div><div class="stat-label inline" lang="en">Units/Year</div></div>
+      <div><div class="stat-num">300</div><div class="stat-label inline" lang="vi">MOQ</div><div class="stat-label inline" lang="en">MOQ</div></div>
     </div>
   </div>
-  <div class="hero-visual">
+  <div class="hero-visual reveal">
     <span class="placeholder-tag">Factory / Product Photo — Placeholder</span>
   </div>
 </section>
@@ -453,7 +478,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== TRUST STRIP ===== -->
 <section id="trust">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">02 — PARTNERS</span>
     <p lang="vi">Được tin tưởng bởi các thương hiệu Việt:</p>
     <p lang="en">Trusted by Vietnamese brands:</p>
@@ -472,7 +497,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== CAPABILITIES ===== -->
 <section id="capabilities">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">03 — CAPABILITIES</span>
     <h2 class="section-title" lang="vi">Năng Lực Sản Xuất</h2>
     <h2 class="section-title" lang="en">Our Capabilities</h2>
@@ -515,7 +540,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== PROCESS TIMELINE ===== -->
 <section id="process">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">04 — PROCESS</span>
     <h2 class="section-title" lang="vi">Từ Ý Tưởng Đến Sản Phẩm</h2>
     <h2 class="section-title" lang="en">From Idea to Delivery</h2>
@@ -571,7 +596,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== ABOUT ===== -->
 <section id="about">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">05 — VỀ CHÚNG TÔI / ABOUT</span>
     <h2 class="section-title" lang="vi">Về Minh Tùng Studio</h2>
     <h2 class="section-title" lang="en">About Minh Tùng Studio</h2>
@@ -612,7 +637,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== SERVICES ===== -->
 <section id="services">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">06 — DỊCH VỤ / SERVICES</span>
     <h2 class="section-title" lang="vi">Dịch Vụ Gia Công</h2>
     <h2 class="section-title" lang="en">Manufacturing Services</h2>
@@ -621,20 +646,20 @@ footer a:hover{color:var(--gold)}
 
     <div class="services-grid">
       <div class="service-card">
-        <h4 lang="vi">🔧 OEM — Gia Công Theo Mẫu</h4>
-        <h4 lang="en">🔧 OEM — Manufacture Your Design</h4>
+        <h4 lang="vi"> OEM — Gia Công Theo Mẫu</h4>
+        <h4 lang="en"> OEM — Manufacture Your Design</h4>
         <p lang="vi">Bạn gửi techpack hoặc sản phẩm mẫu. Chúng tôi sourcing vật liệu, tạo mẫu và sản xuất hàng loạt. Bạn kiểm tra, duyệt, chúng tôi giao hàng.</p>
         <p lang="en">You send the design, techpack, or reference product. We source materials, produce samples, and manufacture bulk. You approve, we deliver.</p>
       </div>
       <div class="service-card">
-        <h4 lang="vi">🎨 ODM — Tối Ưu Thiết Kế & Chất Liệu</h4>
-        <h4 lang="en">🎨 ODM — Design & Material Optimization</h4>
+        <h4 lang="vi"> ODM — Tối Ưu Thiết Kế & Chất Liệu</h4>
+        <h4 lang="en"> ODM — Design & Material Optimization</h4>
         <p lang="vi">Chưa chắc về chất liệu? Chúng tôi đề xuất alternatives — giữ chất lượng, giảm 10–20% chi phí. Tối ưu đường may, pocket layout, hardware.</p>
         <p lang="en">Not sure about materials? We recommend alternatives — same feel, 10–20% cost reduction. Optimize stitch patterns, pocket layouts, hardware.</p>
       </div>
       <div class="service-card">
-        <h4 lang="vi">📦 Additional Services</h4>
-        <h4 lang="en">📦 Additional Services</h4>
+        <h4 lang="vi"> Additional Services</h4>
+        <h4 lang="en"> Additional Services</h4>
         <p lang="vi">Ép logo, đóng gói theo chuẩn Shopee/TikTok, phối hợp vận chuyển. </p>
         <p lang="en">Logo engraving/embossing, heat transfer printing, packaging per Shopee/TikTok standards, logistics coordination.</p>
       </div>
@@ -675,7 +700,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== PRODUCTS ===== -->
 <section id="products">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">07 — SẢN PHẨM / PRODUCTS</span>
     <h2 class="section-title" lang="vi">Sản Phẩm Của Chúng Tôi</h2>
     <h2 class="section-title" lang="en">What We Make</h2>
@@ -683,6 +708,7 @@ footer a:hover{color:var(--gold)}
     <p class="section-sub" lang="en">Product categories for B2B partners. <em style="color:var(--muted);font-size:0.8rem">(Placeholder images)</em></p>
     <div class="prod-grid">
       <div class="prod-card">
+        <div class="ph-img">Product Photo — Placeholder</div>
         <h4 lang="vi">Balo</h4>
         <h4 lang="en">Backpacks</h4>
         <p lang="vi">Balo ngày, laptop, thời trang. Chất liệu Canvas, PU da, hỗn hợp. Ngăn đệm, đa túi, hardware điểm nhấn.</p>
@@ -690,29 +716,33 @@ footer a:hover{color:var(--gold)}
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>20–25 days</span></div>
       </div>
       <div class="prod-card">
-        <h4 lang="vi">👜 Túi Đeo Chéo / Sling</h4>
-        <h4 lang="en">👜 Sling & Crossbody Bags</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Túi Đeo Chéo / Sling</h4>
+        <h4 lang="en"> Sling & Crossbody Bags</h4>
         <p lang="vi">Mini sling, túi vai, crossbody messenger. PU da, canvas, nylon. Dây điều chỉnh, ngăn khóa kéo.</p>
         <p lang="en">Mini slings, shoulder bags, crossbody messengers. PU leather, canvas, nylon. Adjustable straps, zip compartments.</p>
         <div class="tags"><span>PU Leather</span><span>Canvas</span><span>15–25 days</span></div>
       </div>
       <div class="prod-card">
-        <h4 lang="vi">🧳 Túi Du Lịch / Duffel</h4>
-        <h4 lang="en">🧳 Duffel Bags & Weekenders</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Túi Du Lịch / Duffel</h4>
+        <h4 lang="en"> Duffel Bags & Weekenders</h4>
         <p lang="vi">Gym duffel, travel weekender, mini duffle. Canvas, PU da, vải phủ. Dây đeo tháo rời, ngăn giày.</p>
         <p lang="en">Gym duffels, travel weekender bags, mini duffles. Canvas, PU leather, coated fabrics. Detachable straps, shoe compartments.</p>
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>20–25 days</span></div>
       </div>
       <div class="prod-card">
-        <h4 lang="vi">🛍️ Túi Tote</h4>
-        <h4 lang="en">🛍️ Tote Bags</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Túi Tote</h4>
+        <h4 lang="en"> Tote Bags</h4>
         <p lang="vi">Tote cấu trúc, tote gấp gọn, shopping tote. Canvas (gấp gọn), PU da (cấu trúc). Khóa từ, quai gia cố.</p>
         <p lang="en">Structured totes, foldable totes, shopping totes. Canvas (foldable), PU leather (structured). Magnetic closures, reinforced handles.</p>
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>10–25 days</span></div>
       </div>
       <div class="prod-card">
-        <h4 lang="vi">👛 Phụ Kiện Da</h4>
-        <h4 lang="en">👛 Leather Accessories</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Phụ Kiện Da</h4>
+        <h4 lang="en"> Leather Accessories</h4>
         <p lang="vi">Card holder, ví, túi nhỏ, móc khóa. Da thật hoặc PU. Lý tưởng cho quà tặng kèm, bộ sưu tập phụ kiện.</p>
         <p lang="en">Card holders, wallets, small pouches, keychains. Real or PU leather. Ideal for gift-with-purchase, accessory collections.</p>
         <div class="tags"><span>Real Leather</span><span>PU Leather</span><span>10–15 days</span></div>
@@ -725,7 +755,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== QUALITY ===== -->
 <section id="quality">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">08 — CHẤT LƯỢNG / QUALITY</span>
     <h2 class="section-title" lang="vi">Kiểm Soát Chất Lượng</h2>
     <h2 class="section-title" lang="en">Quality Control</h2>
@@ -733,24 +763,28 @@ footer a:hover{color:var(--gold)}
     <p class="section-sub" lang="en">Every batch inspected. Every detail documented.</p>
     <div class="qc-steps">
       <div class="qc-step">
-        <h4 lang="vi">📦 Nguyên Liệu Đầu Vào</h4>
-        <h4 lang="en">📦 Incoming Materials</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Nguyên Liệu Đầu Vào</h4>
+        <h4 lang="en"> Incoming Materials</h4>
         <p lang="vi">Kiểm tra lỗi vải, đối chiếu màu sắc, chất lượng khóa/phụ kiện trước khi cắt.</p>
         <p lang="en">Fabric defects, color match vs. swatch, hardware quality checked before cutting.</p>
       </div>
       <div class="qc-step">
+        <div class="ph-img">Product Photo — Placeholder</div>
         <h4 lang="vi">Trong Sản Xuất</h4>
         <h4 lang="en">In-line Production</h4>
         <p lang="vi">Kiểm tra lực chỉ, căn chỉnh đường may, vị trí túi — trong quá trình ráp.</p>
         <p lang="en">Stitch tension, seam alignment, pocket placement checked during assembly.</p>
       </div>
       <div class="qc-step">
-        <h4 lang="vi">🔍 Trước Khi Hoàn Thiện</h4>
-        <h4 lang="en">🔍 Pre-finishing</h4>
+        <div class="ph-img">Product Photo — Placeholder</div>
+        <h4 lang="vi"> Trước Khi Hoàn Thiện</h4>
+        <h4 lang="en"> Pre-finishing</h4>
         <p lang="vi">Kiểm tra form, đối xứng, chức năng khóa kéo — trước khi gắn hardware/logo.</p>
         <p lang="en">Form check, symmetry, zipper function verified before hardware/logo attachment.</p>
       </div>
       <div class="qc-step">
+        <div class="ph-img">Product Photo — Placeholder</div>
         <h4 lang="vi">Kiểm Định Cuối</h4>
         <h4 lang="en">Final Inspection</h4>
         <p lang="vi">100% lô hàng: đường may, hardware, logo, sạch sẽ, đóng gói. Ảnh gửi khách duyệt.</p>
@@ -772,7 +806,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== CERTIFICATIONS ===== -->
 <section id="certifications">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">09 — CHỨNG CHỈ / CERTIFICATIONS</span>
     <h2 class="section-title" lang="vi">Được Kiểm Định, Đạt Chuẩn</h2>
     <h2 class="section-title" lang="en">Audited, Qualified, Accountable</h2>
@@ -798,7 +832,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== CONTACT ===== -->
 <section id="contact">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">10 — LIÊN HỆ / CONTACT</span>
     <h2 class="section-title" lang="vi">Liên Hệ & Báo Giá</h2>
     <h2 class="section-title" lang="en">Start Your Project</h2>
@@ -872,7 +906,7 @@ footer a:hover{color:var(--gold)}
           <p><strong>Email:</strong> tungnguyenhsr@gmail.com</p>
           <p><strong>Zalo / Phone:</strong> [Liên hệ để biết số]</p>
           <p><strong lang="vi">Địa chỉ:</strong><strong lang="en">Address:</strong> TP.HCM, Vietnam</p>
-          <p>🕐 <strong lang="vi">Phản hồi:</strong><strong lang="en">Response:</strong> <span lang="vi">Trong 24h (ngày làm việc)</span><span lang="en">Within 24 hours (business days)</span></p>
+          <p> <strong lang="vi">Phản hồi:</strong><strong lang="en">Response:</strong> <span lang="vi">Trong 24h (ngày làm việc)</span><span lang="en">Within 24 hours (business days)</span></p>
           <div style="margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--border)">
             <p style="font-size:0.85rem;color:var(--muted);line-height:1.7" lang="vi"><strong>Sau khi gửi:</strong> Chúng tôi xem xét yêu cầu trong 24h → Báo giá sơ bộ (48h) → Bạn gửi techpack → Mẫu thử 7–10 ngày → Bạn duyệt → Sản xuất.</p>
             <p style="font-size:0.85rem;color:var(--muted);line-height:1.7" lang="en"><strong>After you submit:</strong> We review within 24h → Preliminary quote (48h) → You share techpack → Sample in 7–10 days → You approve → Production.</p>
@@ -883,16 +917,16 @@ footer a:hover{color:var(--gold)}
 
     <div class="next-steps">
       <div class="next-card" id="free-sample">
-        <h4 lang="vi">🎁 Mẫu Thử Miễn Phí</h4>
-        <h4 lang="en">🎁 Free Sample</h4>
+        <h4 lang="vi"> Mẫu Thử Miễn Phí</h4>
+        <h4 lang="en"> Free Sample</h4>
         <p lang="vi">Chưa chắc về chất lượng? Gửi brief, chúng tôi làm 1 mẫu thử thực tế (phí mẫu được trừ vào đơn sản xuất).</p>
         <p lang="en">Not sure about quality? Send a brief — we'll make a real physical sample (sample fee deducted from your production order).</p>
         <a href="#contact" class="next-link" lang="vi">Yêu cầu mẫu thử →</a>
         <a href="#contact" class="next-link" lang="en">Request a sample →</a>
       </div>
       <div class="next-card" id="portfolio">
-        <h4 lang="vi">📂 Tải Portfolio</h4>
-        <h4 lang="en">📂 Portfolio Download</h4>
+        <h4 lang="vi"> Tải Portfolio</h4>
+        <h4 lang="en"> Portfolio Download</h4>
         <p lang="vi">Xem danh mục sản phẩm đã gia công cho TeeLab, 98STU, OnFire, JMP, Elever, Owner Studio.</p>
         <p lang="en">See past work made for TeeLab, 98STU, OnFire, JMP, Elever, Owner Studio.</p>
         <a href="#" class="next-link" lang="vi">Tải PDF portfolio →</a>
@@ -914,7 +948,7 @@ footer a:hover{color:var(--gold)}
 
 <!-- ===== CTA ===== -->
 <section id="cta">
-  <div class="section-inner">
+  <div class="section-inner reveal">
     <span class="mono-label">11 — BẮT ĐẦU / GET STARTED</span>
     <h2 lang="vi">Sẵn sàng bắt đầu sản xuất?</h2>
     <h2 lang="en">Ready to start your production?</h2>
@@ -965,20 +999,44 @@ footer a:hover{color:var(--gold)}
   </div>
 </footer>
 
-<!-- ===== LANGUAGE TOGGLE SCRIPT ===== -->
+<!-- ===== LANGUAGE TOGGLE + MOTION SCRIPT ===== -->
 <script>
-function toggleLang() {
+document.addEventListener('DOMContentLoaded', function(){
   var body = document.body;
   var btn = document.getElementById('langToggle');
-  body.classList.toggle('show-en');
-  if (body.classList.contains('show-en')) {
-    btn.textContent = 'VI 🌐';
-    document.documentElement.lang = 'en';
-  } else {
-    btn.textContent = 'EN 🌐';
-    document.documentElement.lang = 'vi';
+  // restore saved lang
+  var saved = localStorage.getItem('mts-lang');
+  if (saved === 'en') body.classList.add('show-en');
+  function updateBtn(){
+    if (body.classList.contains('show-en')) {
+      btn.innerHTML = 'VI <span class="globe"></span>';
+      document.documentElement.lang = 'en';
+    } else {
+      btn.innerHTML = 'EN <span class="globe"></span>';
+      document.documentElement.lang = 'vi';
+    }
   }
-}
+  updateBtn();
+  btn.addEventListener('click', function(){
+    body.classList.toggle('show-en');
+    localStorage.setItem('mts-lang', body.classList.contains('show-en') ? 'en' : 'vi');
+    updateBtn();
+  });
+
+  // ===== MOTION: fade-up on scroll (respect reduced-motion) =====
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add('in-view'); });
+  }
+});
 </script>
 </body>
 </html>
