@@ -394,16 +394,14 @@ footer a:hover{color:var(--gold)}
 }
 .lang-toggle .globe{font-size:0.85em}
 
-/* ===== PLACEHOLDER IMAGE (tastecode: labeled, not fake) ===== */
+/* ===== STOCK IMAGE (tastecode: real stock, labeled by context) ===== */
 .ph-img{
-  aspect-ratio:4/3;width:100%;margin-bottom:var(--space-sm);
-  background:repeating-linear-gradient(45deg,#eee 0 12px,#e6e0d6 12px 24px);
-  border:1px solid var(--border);border-radius:2px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;
-  text-transform:uppercase;color:var(--muted);text-align:center;padding:8px;
+  width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
+  margin-bottom:var(--space-sm);border:1px solid var(--border);border-radius:2px;
+  background:var(--accent);
 }
-.prod-card .ph-img{background:repeating-linear-gradient(45deg,#f0ece4 0 12px,#e8e1d4 12px 24px)}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-visual{animation:none}
 
 /* ===== MOTION: reveal on scroll (tastecode: subtle) ===== */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
@@ -412,9 +410,6 @@ footer a:hover{color:var(--gold)}
   .reveal{opacity:1;transform:none;transition:none}
   .hero-visual{animation:none}
 }
-/* hero visual subtle pulse to feel alive */
-.hero-visual{animation:heroPulse 6s ease-in-out infinite}
-@keyframes heroPulse{0%,100%{opacity:1}50%{opacity:0.82}}
 </style>
 </head>
 <body>
@@ -708,7 +703,7 @@ footer a:hover{color:var(--gold)}
     <p class="section-sub" lang="en">Product categories for B2B partners. <em style="color:var(--muted);font-size:0.8rem">(Placeholder images)</em></p>
     <div class="prod-grid">
       <div class="prod-card">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi">Balo</h4>
         <h4 lang="en">Backpacks</h4>
         <p lang="vi">Balo ngày, laptop, thời trang. Chất liệu Canvas, PU da, hỗn hợp. Ngăn đệm, đa túi, hardware điểm nhấn.</p>
@@ -716,7 +711,7 @@ footer a:hover{color:var(--gold)}
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>20–25 days</span></div>
       </div>
       <div class="prod-card">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Túi Đeo Chéo / Sling</h4>
         <h4 lang="en"> Sling & Crossbody Bags</h4>
         <p lang="vi">Mini sling, túi vai, crossbody messenger. PU da, canvas, nylon. Dây điều chỉnh, ngăn khóa kéo.</p>
@@ -724,7 +719,7 @@ footer a:hover{color:var(--gold)}
         <div class="tags"><span>PU Leather</span><span>Canvas</span><span>15–25 days</span></div>
       </div>
       <div class="prod-card">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Túi Du Lịch / Duffel</h4>
         <h4 lang="en"> Duffel Bags & Weekenders</h4>
         <p lang="vi">Gym duffel, travel weekender, mini duffle. Canvas, PU da, vải phủ. Dây đeo tháo rời, ngăn giày.</p>
@@ -732,7 +727,7 @@ footer a:hover{color:var(--gold)}
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>20–25 days</span></div>
       </div>
       <div class="prod-card">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Túi Tote</h4>
         <h4 lang="en"> Tote Bags</h4>
         <p lang="vi">Tote cấu trúc, tote gấp gọn, shopping tote. Canvas (gấp gọn), PU da (cấu trúc). Khóa từ, quai gia cố.</p>
@@ -740,7 +735,7 @@ footer a:hover{color:var(--gold)}
         <div class="tags"><span>Canvas</span><span>PU Leather</span><span>10–25 days</span></div>
       </div>
       <div class="prod-card">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Phụ Kiện Da</h4>
         <h4 lang="en"> Leather Accessories</h4>
         <p lang="vi">Card holder, ví, túi nhỏ, móc khóa. Da thật hoặc PU. Lý tưởng cho quà tặng kèm, bộ sưu tập phụ kiện.</p>
@@ -763,28 +758,28 @@ footer a:hover{color:var(--gold)}
     <p class="section-sub" lang="en">Every batch inspected. Every detail documented.</p>
     <div class="qc-steps">
       <div class="qc-step">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Nguyên Liệu Đầu Vào</h4>
         <h4 lang="en"> Incoming Materials</h4>
         <p lang="vi">Kiểm tra lỗi vải, đối chiếu màu sắc, chất lượng khóa/phụ kiện trước khi cắt.</p>
         <p lang="en">Fabric defects, color match vs. swatch, hardware quality checked before cutting.</p>
       </div>
       <div class="qc-step">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi">Trong Sản Xuất</h4>
         <h4 lang="en">In-line Production</h4>
         <p lang="vi">Kiểm tra lực chỉ, căn chỉnh đường may, vị trí túi — trong quá trình ráp.</p>
         <p lang="en">Stitch tension, seam alignment, pocket placement checked during assembly.</p>
       </div>
       <div class="qc-step">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1600857062241-98e5dba7f214?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi"> Trước Khi Hoàn Thiện</h4>
         <h4 lang="en"> Pre-finishing</h4>
         <p lang="vi">Kiểm tra form, đối xứng, chức năng khóa kéo — trước khi gắn hardware/logo.</p>
         <p lang="en">Form check, symmetry, zipper function verified before hardware/logo attachment.</p>
       </div>
       <div class="qc-step">
-        <div class="ph-img">Product Photo — Placeholder</div>
+        <img class="ph-img" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80" alt="MTS bag product sample (stock)" loading="lazy">
         <h4 lang="vi">Kiểm Định Cuối</h4>
         <h4 lang="en">Final Inspection</h4>
         <p lang="vi">100% lô hàng: đường may, hardware, logo, sạch sẽ, đóng gói. Ảnh gửi khách duyệt.</p>
