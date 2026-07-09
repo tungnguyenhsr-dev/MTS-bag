@@ -450,23 +450,52 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--color-accent);outli
 }
 .btn-primary:hover,.btn-secondary:hover,.nav-cta:hover,.lang-toggle:hover{
   transition:all var(--motion-fast) var(--ease-standard);
-}
+.lang-toggle .globe{font-size:0.85em}
 
 /* ===== STOCK IMAGE (tastecode: real stock, labeled by context) ===== */
 .ph-img{
   width:100%;aspect-ratio:4/3;object-fit:cover;display:block;
   margin-bottom:var(--space-sm);border:1px solid var(--border);border-radius:var(--radius-sm);
-  background:var(--accent);
+  background:var(--accent);transition:transform var(--motion-slow) var(--ease-out);
 }
+.prod-card:hover .ph-img,.qc-step:hover .ph-img{transform:scale(1.03)}
 .hero-img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-visual{animation:none}
 
-/* ===== MOTION: reveal on scroll (tastecode: subtle) ===== */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* ===== HERO ENHANCEMENT ===== */
+.hero-visual{position:relative;min-height:420px;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border)}
+.hero-visual .hero-img{position:absolute;inset:0;width:100%;height:100%}
+.hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,26,0.05),rgba(26,26,26,0.55))}
+.hero-overlay{position:absolute;left:var(--space-md);bottom:var(--space-md);right:var(--space-md);z-index:2;color:#fff}
+.hero-overlay .mono-label{color:var(--color-accent)}
+.hero-overlay h3{font-size:1.1rem;font-weight:700;margin-top:var(--space-xs);letter-spacing:0.02em}
+.hero-factory-tag{font-family:var(--font-mono);font-size:var(--fs-mono);letter-spacing:0.18em;text-transform:uppercase;opacity:0.85}
+
+/* ===== FACTORY GALLERY ===== */
+.factory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-md);margin-top:var(--space-lg)}
+.factory-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:1px solid var(--border);border-radius:var(--radius-sm);transition:transform var(--motion-slow) var(--ease-out)}
+.factory-img:hover{transform:scale(1.03)}
+
+/* ===== ANIMATION POLISH ===== */
+/* stagger reveal by index */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity var(--motion-slow) var(--ease-out),transform var(--motion-slow) var(--ease-out)}
 .reveal.in-view{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:0.08s}
+.reveal[data-delay="2"]{transition-delay:0.16s}
+.reveal[data-delay="3"]{transition-delay:0.24s}
+/* hero entrance */
+@keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero-content .mono-label,.hero-content h1,.hero-content h2,.hero-content p,.hero-btns,.hero-stats{animation:heroIn 0.7s var(--ease-out) both}
+.hero-content h1{animation-delay:0.05s}
+.hero-content h2{animation-delay:0.12s}
+.hero-content p{animation-delay:0.19s}
+.hero-btns{animation-delay:0.26s}
+.hero-stats{animation-delay:0.33s}
+
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
+  .hero-content .mono-label,.hero-content h1,.hero-content h2,.hero-content p,.hero-btns,.hero-stats{animation:none}
   .hero-visual{animation:none}
+  .ph-img,.factory-img,.hero-img{transition:none}
 }
 </style>
 </head>
@@ -481,6 +510,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--color-accent);outli
     <div class="nav-links">
       <a href="#about" lang="vi">Giới Thiệu</a>
       <a href="#about" lang="en">About</a>
+      <a href="#factory" lang="vi">Nhà Máy</a>
+      <a href="#factory" lang="en">Facility</a>
       <a href="#services" lang="vi">Dịch Vụ</a>
       <a href="#services" lang="en">Services</a>
       <a href="#products" lang="vi">Sản Phẩm</a>
@@ -523,7 +554,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--color-accent);outli
     </div>
   </div>
   <div class="hero-visual reveal">
-    <span class="placeholder-tag">Factory / Product Photo — Placeholder</span>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="MTS factory floor — sewing & assembly (stock)">
+    <div class="hero-overlay">
+      <span class="mono-label">FACILITY</span>
+      <h3 lang="vi">Xưởng May Tại Việt Nam</h3>
+      <h3 lang="en">Vietnam Sewing Facility</h3>
+      <span class="hero-factory-tag">In-house cutting · sewing · QC</span>
+    </div>
   </div>
 </section>
 
@@ -682,6 +719,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--color-accent);outli
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===== FACTORY / FACILITY GALLERY ===== -->
+<section id="factory">
+  <div class="section-inner reveal">
+    <span class="mono-label">05 — NHÀ MÁY / FACILITY</span>
+    <h2 class="section-title" lang="vi">Xưởng Sản Xuất Của Chúng Tôi</h2>
+    <h2 class="section-title" lang="en">Inside Our Workshop</h2>
+    <p class="section-sub" lang="vi">Quy trình khép kín — từ cắt, may, logo đến kiểm định. Ảnh minh họa (stock).</p>
+    <p class="section-sub" lang="en">End-to-end process — cutting, sewing, branding, QC. Illustrative stock photos.</p>
+    <div class="factory-grid">
+      <img class="factory-img reveal" data-delay="1" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&q=80" alt="Factory assembly line (stock)" loading="lazy">
+      <img class="factory-img reveal" data-delay="2" src="https://images.unsplash.com/photo-1605908502724-9093a79a1b39?w=700&q=80" alt="Sewing station (stock)" loading="lazy">
+      <img class="factory-img reveal" data-delay="3" src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=700&q=80" alt="Workshop craftsmanship (stock)" loading="lazy">
+      <img class="factory-img reveal" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80" alt="Production equipment (stock)" loading="lazy">
     </div>
   </div>
 </section>
