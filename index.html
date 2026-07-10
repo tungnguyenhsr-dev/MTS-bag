@@ -19,6 +19,7 @@ gtag('config', 'G-XXXXXXXXXX');
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mtsbag.vercel.app">
 <meta name="keywords" content="gia công túi xách TP.HCM, OEM backpack Vietnam, custom bag manufacturer, sản xuất balo số lượng ít, OEM sling bag Vietnam">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='136' height='136' viewBox='0 0 136 136' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='136' height='136' rx='30' fill='%231A1A1A'/%3E%3Cpath d='M41 56 A27 27 0 0 1 95 56' fill='none' stroke='%23C8A96E' stroke-width='5.5' stroke-linecap='round'/%3E%3Crect x='30' y='56' width='76' height='64' rx='10' fill='%23C8A96E'/%3E%3Crect x='39' y='90' width='58' height='30' rx='7' fill='none' stroke='%231A1A1A' stroke-width='2.5' opacity='0.22'/%3E%3Cpath d='M44 60 C32 75 30 90 34 108' fill='none' stroke='%23C8A96E' stroke-width='3.5' stroke-linecap='round' opacity='0.65'/%3E%3Cpath d='M92 60 C104 75 106 90 102 108' fill='none' stroke='%23C8A96E' stroke-width='3.5' stroke-linecap='round' opacity='0.65'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -119,9 +120,11 @@ nav{
   display:flex;align-items:center;justify-content:space-between;height:100%;
 }
 .nav-logo{
-  font-size:1.05rem;font-weight:700;letter-spacing:0.08em;
-  text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:10px;text-decoration:none;
 }
+.nav-logo svg{width:28px;height:28px;display:block;flex-shrink:0}
+.nav-logo-text{font-size:1.05rem;font-weight:800;letter-spacing:0.05em;color:var(--color-ink)}
+.nav-logo-text span{color:var(--gold)}
 .nav-links{display:flex;gap:var(--space-md);align-items:center}
 .nav-links a{
   font-size:0.85rem;font-weight:500;color:var(--text);
@@ -387,7 +390,10 @@ footer{
 footer h4{font-size:0.9rem;font-weight:700;margin-bottom:var(--space-sm);color:var(--primary)}
 footer p,footer a{font-size:0.85rem;color:var(--muted);line-height:1.8}
 footer a:hover{color:var(--gold)}
-.footer-logo{font-size:1.05rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:var(--space-xs)}
+.footer-logo{display:flex;align-items:center;gap:12px;margin-bottom:var(--space-xs)}
+.footer-logo svg{width:40px;height:40px;display:block;flex-shrink:0}
+.footer-logo-text{font-size:1.05rem;font-weight:800;letter-spacing:0.05em;color:var(--color-ink)}
+.footer-logo-text span{color:var(--gold)}
 .footer-bottom{
   max-width:var(--max-w);margin:var(--space-lg) auto 0;
   padding-top:var(--space-md);border-top:1px solid var(--border);
@@ -559,7 +565,8 @@ html.reveal-active .reveal[data-delay="3"]{transition-delay:0.24s}
 .nav-links a.active-link{color:var(--gold);position:relative}
 .nav-links a.active-link::after{content:"";position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--gold);border-radius:1px}
 nav.nav-scrolled{height:40px;box-shadow:var(--elevation-1);background:rgba(245,240,235,0.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-nav.nav-scrolled .nav-logo{font-size:0.95rem}
+nav.nav-scrolled .nav-logo svg{width:22px;height:22px}
+nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 @media(max-width:768px){
   nav.nav-scrolled{height:40px}
   #back-to-top{bottom:16px;right:16px;width:44px;height:44px}
@@ -575,7 +582,20 @@ nav.nav-scrolled .nav-logo{font-size:0.95rem}
 <!-- ===== NAVIGATION ===== -->
 <nav>
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Minh Tùng Studio</a>
+    <a href="#hero" class="nav-logo" aria-label="Minh Tùng Studio — Home">
+      <svg viewBox="0 0 136 136" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="136" height="136" rx="30" fill="#1A1A1A"/>
+        <path d="M41 56 A27 27 0 0 1 95 56" fill="none" stroke="#C8A96E" stroke-width="5.5" stroke-linecap="round"/>
+        <rect x="30" y="56" width="76" height="64" rx="10" fill="#C8A96E"/>
+        <line x1="38" y1="64" x2="98" y2="64" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.3"/>
+        <rect x="39" y="90" width="58" height="30" rx="7" fill="none" stroke="#1A1A1A" stroke-width="2.5" opacity="0.22"/>
+        <line x1="48" y1="100" x2="88" y2="100" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        <circle cx="88" cy="100" r="2.5" fill="#1A1A1A" opacity="0.4"/>
+        <path d="M44 60 C32 75 30 90 34 108" fill="none" stroke="#C8A96E" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+        <path d="M92 60 C104 75 106 90 102 108" fill="none" stroke="#C8A96E" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+      </svg>
+      <span class="nav-logo-text">MINH TÙNG <span>STUDIO</span></span>
+    </a>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
     <div class="nav-links">
@@ -1154,7 +1174,20 @@ nav.nav-scrolled .nav-logo{font-size:0.95rem}
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo">Minh Tùng Studio</div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 136 136" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <rect width="136" height="136" rx="30" fill="#1A1A1A"/>
+          <path d="M41 56 A27 27 0 0 1 95 56" fill="none" stroke="#C8A96E" stroke-width="5.5" stroke-linecap="round"/>
+          <rect x="30" y="56" width="76" height="64" rx="10" fill="#C8A96E"/>
+          <line x1="38" y1="64" x2="98" y2="64" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.3"/>
+          <rect x="39" y="90" width="58" height="30" rx="7" fill="none" stroke="#1A1A1A" stroke-width="2.5" opacity="0.22"/>
+          <line x1="48" y1="100" x2="88" y2="100" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="88" cy="100" r="2.5" fill="#1A1A1A" opacity="0.4"/>
+          <path d="M44 60 C32 75 30 90 34 108" fill="none" stroke="#C8A96E" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+          <path d="M92 60 C104 75 106 90 102 108" fill="none" stroke="#C8A96E" stroke-width="3.5" stroke-linecap="round" opacity="0.65"/>
+        </svg>
+        <span class="footer-logo-text">MINH TÙNG <span>STUDIO</span></span>
+      </div>
       <p lang="vi">Sản Xuất Túi / Balo Tại Việt Nam 🇻🇳</p>
       <p lang="en">Bag & Backpack Manufacturing in Vietnam 🇻🇳</p>
       <p style="margin-top:var(--space-sm);font-size:0.8rem;color:var(--muted)" lang="vi">Xưởng sản xuất OEM — Đối tác cho thương hiệu thời trang, streetwear và startup.</p>
