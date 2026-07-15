@@ -113,6 +113,7 @@
       <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="nav-logo-img">
     </a>
     <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
     <div class="nav-links">
       <a href="index.html#about" lang="vi">Giới Thiệu</a>
       <a href="index.html#about" lang="en">About</a>
@@ -128,8 +129,12 @@
       <a href="blog.html" lang="en" class="active-link">Blog</a>
       <a href="index.html#contact" lang="vi">Liên Hệ</a>
       <a href="index.html#contact" lang="en">Contact</a>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">EN <span class="globe"></span></button>
+        <a href="index.html#contact" class="nav-cta" lang="vi">Bắt Đầu →</a>
+        <a href="index.html#contact" class="nav-cta" lang="en">Start →</a>
+      </div>
     </div>
-    <button class="btn-secondary lang-toggle" lang="vi">EN</button>
   </div>
 </nav>
 
@@ -202,24 +207,28 @@
 
     <h2 lang="vi">Số lượng đặt tối thiểu (MOQ)</h2>
     <h2 lang="en">Minimum Order Quantity (MOQ)</h2>
-    <table class="blog-table">
-      <tr><th>Hạng mục</th><th>MOQ</th><th>Ưu đãi</th></tr>
-      <tr><td>Tiêu chuẩn</td><td>300 pcs/SKU</td><td>Giá cơ bản</td></tr>
-      <tr><td>Số lượng lớn</td><td>1.000+ pcs/SKU</td><td>Giảm 8–15%</td></tr>
-      <tr><td>Đa SKU</td><td>2+ SKUs</td><td>+5% tổng đơn</td></tr>
-    </table>
+    <div class="blog-table-wrap">
+      <table class="blog-table">
+        <tr><th>Hạng mục</th><th>MOQ</th><th>Ưu đãi</th></tr>
+        <tr><td>Tiêu chuẩn</td><td>300 pcs/SKU</td><td>Giá cơ bản</td></tr>
+        <tr><td>Số lượng lớn</td><td>1.000+ pcs/SKU</td><td>Giảm 8–15%</td></tr>
+        <tr><td>Đa SKU</td><td>2+ SKUs</td><td>+5% tổng đơn</td></tr>
+      </table>
+    </div>
 
     <h2 lang="vi">Thời gian sản xuất</h2>
     <h2 lang="en">Lead time</h2>
-    <table class="blog-table">
-      <tr><th>Sản phẩm</th><th>Chất liệu</th><th>Thời gian</th></tr>
-      <tr><td>Tote gấp gọn</td><td>Canvas + da</td><td>10–18 ngày</td></tr>
-      <tr><td>Tote cấu trúc</td><td>PU da</td><td>15–25 ngày</td></tr>
-      <tr><td>Túi đeo chéo / Sling</td><td>PU / Canvas</td><td>15–25 ngày</td></tr>
-      <tr><td>Balo</td><td>Hỗn hợp</td><td>20–25 ngày</td></tr>
-      <tr><td>Túi du lịch / Duffel</td><td>Nhiều loại</td><td>20–25 ngày</td></tr>
-      <tr><td>Phụ kiện da</td><td>Da thật / PU</td><td>10–15 ngày</td></tr>
-    </table>
+    <div class="blog-table-wrap">
+      <table class="blog-table">
+        <tr><th>Sản phẩm</th><th>Chất liệu</th><th>Thời gian</th></tr>
+        <tr><td>Tote gấp gọn</td><td>Canvas + da</td><td>10–18 ngày</td></tr>
+        <tr><td>Tote cấu trúc</td><td>PU da</td><td>15–25 ngày</td></tr>
+        <tr><td>Túi đeo chéo / Sling</td><td>PU / Canvas</td><td>15–25 ngày</td></tr>
+        <tr><td>Balo</td><td>Hỗn hợp</td><td>20–25 ngày</td></tr>
+        <tr><td>Túi du lịch / Duffel</td><td>Nhiều loại</td><td>20–25 ngày</td></tr>
+        <tr><td>Phụ kiện da</td><td>Da thật / PU</td><td>10–15 ngày</td></tr>
+      </table>
+    </div>
 
     <h2 lang="vi">Kiểm soát chất lượng</h2>
     <h2 lang="en">Quality control</h2>
@@ -284,12 +293,14 @@
 
     <h2 lang="vi">Bước 5 — Ngân sách & tiến độ</h2>
     <h2 lang="en">Step 5 — Budget & timeline</h2>
-    <table class="blog-table">
-      <tr><th>Hạng mục</th><th>Thời gian</th></tr>
-      <tr><td>Làm mẫu</td><td>7–14 ngày</td></tr>
-      <tr><td>Sản xuất</td><td>10–25 ngày</td></tr>
-      <tr><td>Vận chuyển</td><td>tùy phương thức</td></tr>
-    </table>
+    <div class="blog-table-wrap">
+      <table class="blog-table">
+        <tr><th>Hạng mục</th><th>Thời gian</th></tr>
+        <tr><td>Làm mẫu</td><td>7–14 ngày</td></tr>
+        <tr><td>Sản xuất</td><td>10–25 ngày</td></tr>
+        <tr><td>Vận chuyển</td><td>tùy phương thức</td></tr>
+      </table>
+    </div>
     <p lang="vi">Tính 6–8 tuần từ brief đến hàng giao cho lô đầu.</p>
     <p lang="en">Plan 6–8 weeks from brief to delivered goods for a first run.</p>
 
@@ -338,6 +349,71 @@
   </div>
 </footer>
 
-<script src="assets/mts.js"></script>
+<!-- ===== BACK TO TOP ===== -->
+<button id="back-to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+ try {
+  var body = document.body;
+  var btn = document.getElementById('langToggle');
+  var saved = null;
+  try { saved = localStorage.getItem('mts-lang'); } catch(e) { saved = null; }
+  if (saved === 'en') body.classList.add('show-en');
+  function updateBtn(){
+    if (body.classList.contains('show-en')) {
+      btn.innerHTML = 'VI <span class="globe"></span>';
+      document.documentElement.lang = 'en';
+    } else {
+      btn.innerHTML = 'EN <span class="globe"></span>';
+      document.documentElement.lang = 'vi';
+    }
+  }
+  updateBtn();
+  if (btn) btn.addEventListener('click', function(){
+    body.classList.toggle('show-en');
+    try { localStorage.setItem('mts-lang', body.classList.contains('show-en') ? 'en' : 'vi'); } catch(e) {}
+    updateBtn();
+  });
+
+  // Safe reveal: content visible by default; JS only adds the animation class.
+  document.documentElement.classList.add('reveal-active');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if (!reduce && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.05, rootMargin:'0px 0px 60px 0px'});
+    targets.forEach(function(t){ io.observe(t); });
+  } else {
+    targets.forEach(function(t){ t.classList.add('in-view'); });
+  }
+
+  // Back to Top + Nav shrink (blog has no #hero, so drive from scroll position)
+  var backBtn = document.getElementById('back-to-top');
+  var nav = document.querySelector('nav');
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop || 0;
+    if (backBtn) backBtn.classList.toggle('visible', y > 300);
+    if (nav) nav.classList.toggle('nav-scrolled', y > 40);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  if (backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+  onScroll();
+
+  // Close the mobile menu after a link is tapped
+  var menuToggle = document.getElementById('menu-toggle');
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){ if (menuToggle) menuToggle.checked = false; });
+  });
+ } catch(err) {
+  console.error('MTS interaction script error:', err);
+ }
+});
+</script>
 </body>
 </html>

@@ -566,6 +566,11 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
   border:1px solid var(--border);transition:border-color 0.2s,transform var(--motion-base) var(--ease-out),box-shadow var(--motion-base) var(--ease-out);
 }
 .blog-card:hover{border-color:var(--gold);box-shadow:var(--elevation-2);transform:translateY(-6px) scale(1.02)}
+/* read-more link sits on a white card, so override the dark-hero .btn-secondary (white-on-white) */
+.blog-card .btn-secondary{
+  border:1px solid var(--border);color:var(--primary);background:none;padding:10px 22px;
+}
+.blog-card .btn-secondary:hover{border-color:var(--gold);color:var(--gold);background:var(--accent)}
 .blog-card h3{font-size:1.1rem;font-weight:700;margin-bottom:var(--space-xs);color:var(--primary)}
 .blog-card .blog-meta{font-size:0.75rem;color:var(--muted);margin-bottom:var(--space-sm);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.1em}
 .blog-card p{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:var(--space-md)}
