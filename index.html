@@ -488,26 +488,30 @@ footer a:hover{color:var(--gold)}
 @media(max-width:900px){
   .factory-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:768px){
+/* tablet & below: collapse the whole nav into the hamburger dropdown.
+   Desktop (>=1025px) shows the full inline link row + actions. */
+@media(max-width:1024px){
   .nav-links{
-    position:fixed;top:48px;left:0;right:0;background:var(--accent);
+    position:fixed;top:48px;left:0;right:0;background:var(--color-bg);
     flex-direction:column;padding:var(--space-md);
     border-bottom:1px solid var(--border);
-    transform:translateY(-120%);transition:transform 0.3s;
+    transform:translateY(-120%);transition:transform 0.3s var(--ease-out);
     gap:var(--space-sm);align-items:stretch;
-    max-height:calc(100vh - 48px);overflow-y:auto;
+    max-height:calc(100vh - 48px);overflow-y:auto;z-index:1000;
   }
-  .nav-links a{padding:6px 0}
+  .nav-links a{padding:8px 0;font-size:0.95rem}
+  .nav-links a.active-link::after{display:none}
   .nav-actions{
     flex-direction:column;align-items:stretch;gap:var(--space-sm);
     margin-top:var(--space-xs);padding-top:var(--space-sm);
     border-top:1px solid var(--border);
   }
-  .nav-actions .lang-toggle,.nav-actions .nav-cta{
-    width:100%;text-align:center;padding:12px 18px;font-size:0.9rem;
-  }
+  .nav-actions .lang-toggle,.nav-actions .theme-toggle{flex:1;text-align:center;padding:10px}
+  .nav-actions .nav-cta{width:100%;text-align:center;padding:12px 18px;font-size:0.9rem}
   .hamburger{display:flex;z-index:1001;position:relative}
   #menu-toggle:checked ~ .nav-links{transform:translateY(0)}
+}
+@media(max-width:768px){
   .about-grid,.contact-grid{grid-template-columns:1fr}
   #hero{flex-direction:column;gap:var(--space-lg)}
   .hero-visual{display:none}
@@ -515,29 +519,6 @@ footer a:hover{color:var(--gold)}
   .footer-inner{grid-template-columns:1fr;gap:var(--space-md)}
   section{padding:var(--space-lg) var(--space-sm)}
   .process-step{flex:1 1 80px}
-}
-/* collapse the full link row into the hamburger earlier so it never overflows
-   the bar in narrow preview / tablet widths (the <768px rules refine this) */
-@media(max-width:1200px){
-  .hamburger{display:flex;z-index:1001;position:relative}
-  .nav-links{
-    position:fixed;top:48px;left:0;right:0;background:var(--color-bg);
-    flex-direction:column;padding:var(--space-md);
-    border-bottom:1px solid var(--border);
-    transform:translateY(-120%);transition:transform 0.3s;
-    gap:var(--space-sm);align-items:stretch;
-    max-height:calc(100vh - 48px);overflow-y:auto;
-  }
-  #menu-toggle:checked ~ .nav-links{transform:translateY(0)}
-  .nav-links a{padding:6px 0}
-  .nav-actions{
-    flex-direction:column;align-items:stretch;gap:var(--space-sm);
-    margin-top:var(--space-xs);padding-top:var(--space-sm);
-    border-top:1px solid var(--border);
-  }
-  .nav-actions .lang-toggle,.nav-actions .nav-cta{
-    width:100%;text-align:center;padding:12px 18px;font-size:0.9rem;
-  }
 }
 @media(max-width:480px){
   .hero-btns{flex-direction:column}
