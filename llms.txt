@@ -1,0 +1,33 @@
+# MTS (Minh Tùng Studio) — OEM Bag & Backpack Manufacturer Vietnam
+
+> Minh Tùng Studio is a closed-loop OEM/ODM bag and backpack manufacturer in Ho Chi Minh City, Vietnam. We cut, sew, QC, and pack under one roof. MOQ: 300 pcs/SKU. Lead time: 10–25 days. Free trial sample available. B2B only — serving fashion brands, streetwear labels, and startups.
+
+## Key Pages
+
+- [Homepage — Capabilities & Services](https://mts-bag.vercel.app/)
+- [Blog — Bag Manufacturing Guides](https://mts-bag.vercel.app/blog.html)
+- [OEM Bag Manufacturer Vietnam — Full Guide](https://mts-bag.vercel.app/blog.html#oem-guide)
+- [How to Start a Bag Brand — Manufacturing 101](https://mts-bag.vercel.app/blog.html#start-brand)
+- [Contact / Request a Quote](https://mts-bag.vercel.app/#contact)
+
+## Factory Facts
+
+- **MOQ:** 300 pcs per SKU (standard), 1,000+ (volume discount 8–15%)
+- **Lead time:** 10–25 days depending on product complexity
+- **Quality:** In-house QC per AQL 2.5, per-batch inspection photos
+- **Products:** Backpacks, sling bags, duffels, totes, leather accessories
+- **Materials:** Canvas, PU leather, genuine leather, nylon, polyester
+- **Capacity:** 50,000+ units/year across 6+ partner brands
+- **Contact:** tungnguyenhsr@gmail.com | Zalo: +84 773 108 320 | WhatsApp: +84 979 768 997
+
+## Services
+
+- **OEM Manufacturing** — You provide the design/techpack; we source materials, sample, and produce bulk.
+- **ODM Design Optimization** — We recommend material alternatives and construction improvements to reduce costs 10–20%.
+- **Logo & Branding** — Engraving, embossing, heat transfer, custom hardware.
+- **Packaging & Logistics** — Pack per Shopee/TikTok standards, coordinate shipping.
+
+## Structured Data
+
+- Organization + Product + WebSite JSON-LD on homepage
+- FAQPage + Article JSON-LD on blog pages
