@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.className += ' js';</script>
+<script>
+  document.documentElement.className += ' js';
+  try {
+    var t = localStorage.getItem('mts-theme');
+    if (t === 'dark') document.documentElement.classList.add('theme-dark');
+    else if (t === 'light') document.documentElement.classList.add('theme-light');
+  } catch(e) {}
+</script>
 <title>Blog — Minh Tùng Studio | OEM Bag Manufacturer Vietnam</title>
 <meta name="description" content="Guides for brands sourcing bag manufacturing in Vietnam: OEM/ODM, MOQ, lead time, and how to start a bag brand. By Minh Tùng Studio.">
 <link rel="canonical" href="https://mts-bag.vercel.app/blog.html">
@@ -80,7 +87,8 @@
 <nav>
   <div class="nav-inner">
     <a href="index.html#hero" class="nav-logo" aria-label="Minh Tùng Studio — Home">
-      <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="nav-logo-img">
+      <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="nav-logo-img logo-light">
+      <img src="assets/mts-logo-light.svg" alt="Minh Tùng Studio" class="nav-logo-img logo-dark">
     </a>
     <input type="checkbox" id="menu-toggle" hidden>
     <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
@@ -100,6 +108,7 @@
       <a href="index.html#contact" lang="vi">Liên Hệ</a>
       <a href="index.html#contact" lang="en">Contact</a>
       <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
         <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">EN <span class="globe"></span></button>
         <a href="index.html#contact" class="nav-cta" lang="vi">Bắt Đầu →</a>
         <a href="index.html#contact" class="nav-cta" lang="en">Start →</a>
@@ -352,7 +361,8 @@
   <div class="footer-inner">
     <div>
       <div class="footer-logo">
-        <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="footer-logo-img">
+        <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="footer-logo-img logo-light">
+        <img src="assets/mts-logo-light.svg" alt="Minh Tùng Studio" class="footer-logo-img logo-dark">
       </div>
       <p lang="vi">Sản Xuất Túi / Balo Tại Việt Nam</p>
       <p lang="en">Bag &amp; Backpack Manufacturing in Vietnam</p>
@@ -404,6 +414,39 @@ document.addEventListener('DOMContentLoaded', function(){
     body.classList.toggle('show-en');
     try { localStorage.setItem('mts-lang', body.classList.contains('show-en') ? 'en' : 'vi'); } catch(e) {}
     updateBtn();
+  });
+
+  // Theme toggle (light/dark with system default)
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('themeToggle');
+  var darkMql = window.matchMedia('(prefers-color-scheme: dark)');
+  var SUN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  var MOON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function resolvedTheme(){
+    if (root.classList.contains('theme-dark')) return 'dark';
+    if (root.classList.contains('theme-light')) return 'light';
+    return darkMql.matches ? 'dark' : 'light';
+  }
+  function paintThemeBtn(){
+    var t = resolvedTheme();
+    themeBtn.innerHTML = (t === 'dark') ? SUN_SVG : MOON_SVG;
+    themeBtn.setAttribute('aria-label', (t === 'dark') ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('mts-theme'); } catch(e) {}
+  if (savedTheme === 'dark') root.classList.add('theme-dark');
+  else if (savedTheme === 'light') root.classList.add('theme-light');
+  paintThemeBtn();
+  if (themeBtn) themeBtn.addEventListener('click', function(){
+    var cur = resolvedTheme();
+    root.classList.remove('theme-dark','theme-light');
+    var next = (cur === 'dark') ? 'light' : 'dark';
+    root.classList.add(next === 'dark' ? 'theme-dark' : 'theme-light');
+    try { localStorage.setItem('mts-theme', next); } catch(e) {}
+    paintThemeBtn();
+  });
+  if (darkMql.addEventListener) darkMql.addEventListener('change', function(){
+    if (!root.classList.contains('theme-dark') && !root.classList.contains('theme-light')) paintThemeBtn();
   });
 
   // Safe reveal: content visible by default; JS only adds the animation class.

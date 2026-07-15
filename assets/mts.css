@@ -81,7 +81,6 @@ ul{list-style:none}
 /* ===== LANGUAGE TOGGLE SYSTEM (robust) ===== */
 body:not(.show-en) [lang="en"]{display:none !important}
 body.show-en [lang="vi"]{display:none !important}
-body.show-en [lang="en"]{display:block}
 /* inline vi/en pairs that should stay inline (stats, etc.) */
 body.show-en [lang="en"].inline,body:not(.show-en) [lang="vi"].inline{display:inline !important}
 
@@ -101,6 +100,14 @@ nav{
 }
 .nav-logo svg{width:28px;height:28px;display:block;flex-shrink:0}
 .nav-logo-img{height:38px;width:auto;display:block}
+/* theme-aware logo swap: dark logo on light nav, light logo on dark nav */
+.nav-logo-img.logo-dark,.footer-logo-img.logo-dark{display:none}
+html.theme-dark .nav-logo-img.logo-light,html.theme-dark .footer-logo-img.logo-light{display:none}
+html.theme-dark .nav-logo-img.logo-dark,html.theme-dark .footer-logo-img.logo-dark{display:block}
+@media (prefers-color-scheme: dark){
+  :root:not(.theme-light) .nav-logo-img.logo-light,:root:not(.theme-light) .footer-logo-img.logo-light{display:none}
+  :root:not(.theme-light) .nav-logo-img.logo-dark,:root:not(.theme-light) .footer-logo-img.logo-dark{display:block}
+}
 .nav-logo-text{font-size:1.05rem;font-weight:800;letter-spacing:0.05em;color:var(--color-ink)}
 .nav-logo-text span{color:var(--gold)}
 .nav-links{display:flex;gap:var(--space-md);align-items:center}
@@ -115,6 +122,14 @@ nav{
   font-weight:600;color:var(--text);cursor:pointer;transition:all var(--motion-fast);
 }
 .lang-toggle:hover{border-color:var(--gold);color:var(--gold)}
+/* theme (light/dark) toggle — icon button, sits next to language toggle */
+.theme-toggle{
+  background:none;border:1px solid var(--border);border-radius:var(--radius-md);
+  width:34px;height:34px;display:grid;place-items:center;cursor:pointer;flex-shrink:0;
+  color:var(--text);transition:all var(--motion-fast);
+}
+.theme-toggle:hover{border-color:var(--gold);color:var(--gold)}
+.theme-toggle svg{width:18px;height:18px;display:block}
 .nav-actions{display:flex;align-items:center;gap:var(--space-sm)}
 .nav-cta{
   background:var(--gold);color:var(--primary);padding:8px 18px;border-radius:var(--radius-md);
@@ -458,6 +473,25 @@ footer a:hover{color:var(--gold)}
   section{padding:var(--space-lg) var(--space-sm)}
   .process-step{flex:1 1 80px}
 }
+/* keep the nav usable at tablet / narrow-preview widths:
+   compact (smaller gaps + type) instead of hiding the whole bar.
+   Full hamburger collapse still happens at <=768px (below). */
+@media(max-width:1200px){
+  .nav-links{gap:14px}
+  .nav-links a{font-size:0.82rem}
+  .nav-actions{gap:10px}
+  .nav-cta{padding:8px 14px;font-size:0.8rem}
+  .lang-toggle{padding:5px 10px;font-size:0.76rem}
+  .theme-toggle{width:32px;height:32px}
+  .nav-logo-img{height:34px}
+}
+@media(max-width:980px){
+  .nav-links{gap:10px}
+  .nav-links a{font-size:0.76rem}
+  .nav-actions{gap:8px}
+  .nav-cta{padding:7px 12px;font-size:0.74rem}
+  .lang-toggle{padding:5px 9px;font-size:0.72rem}
+}
 @media(max-width:480px){
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-secondary{text-align:center}
@@ -655,7 +689,9 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 /* media placeholder — swap <img> in when real photos are available */
 .media-ph{
   position:relative;width:100%;aspect-ratio:16/9;
-  background:var(--color-surface);border:1px solid var(--border);
+  background-color:var(--color-surface);
+  background-image:linear-gradient(135deg, rgba(26,26,26,0.06), rgba(26,26,26,0.12));
+  border:1px solid var(--border);
   border-radius:var(--radius-md);display:grid;place-items:center;overflow:hidden;
 }
 .media-ph--4x3{aspect-ratio:4/3}
@@ -676,7 +712,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
   transition:all var(--motion-fast);
 }
 .blog-chip:hover{border-color:var(--gold);color:var(--gold)}
-.blog-chip.is-active{background:var(--color-on-dark);color:var(--color-ink);border-color:var(--color-on-dark)}
+.blog-chip.is-active{background:var(--color-on-dark);color:var(--section-dark);border-color:var(--color-on-dark)}
 
 /* listing card */
 .blog-card-media{display:block;margin-bottom:var(--space-md)}
@@ -706,7 +742,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 
 /* post cover + title + meta row */
 .blog-cover{margin:var(--space-lg) 0 var(--space-md)}
-.blog-post-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:var(--space-sm);color:var(--primary);letter-spacing:-0.02em}
+.blog-post .blog-post-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;line-height:1.2;margin-bottom:var(--space-sm);color:var(--primary);letter-spacing:-0.02em}
 .blog-meta-row{
   display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;
   font-size:0.8rem;color:var(--muted);margin-bottom:var(--space-md);
@@ -765,11 +801,24 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 
 /* ===== DARK MODE (system preference) ===== */
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not(.theme-light){
     --color-bg:#161616; --color-surface:#242424; --color-ink:#F5F0EB;
     --color-ink-soft:#2E2E2E; --color-accent:#C8A96E; --color-muted:#B5A791;
     --color-border:#2E2E2E; --color-border-dark:#0E0E0E;
     --border-light:rgba(255,255,255,0.14); --border-dark:rgba(0,0,0,0.5);
     --section-dark:#0E0E0E; --color-on-dark:#F5F0EB;
   }
+  /* lighten placeholder tint so it reads against the dark card/page */
+  :root:not(.theme-light) .media-ph{background-image:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.10))}
 }
+/* manual override (toggle) — class beats the media-query :root */
+html.theme-dark{
+  color-scheme:dark;
+  --color-bg:#161616; --color-surface:#242424; --color-ink:#F5F0EB;
+  --color-ink-soft:#2E2E2E; --color-accent:#C8A96E; --color-muted:#B5A791;
+  --color-border:#2E2E2E; --color-border-dark:#0E0E0E;
+  --border-light:rgba(255,255,255,0.14); --border-dark:rgba(0,0,0,0.5);
+  --section-dark:#0E0E0E; --color-on-dark:#F5F0EB;
+}
+html.theme-dark .media-ph{background-image:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.10))}
+html.theme-light{color-scheme:light}
