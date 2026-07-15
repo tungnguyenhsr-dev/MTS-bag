@@ -179,9 +179,11 @@ section{padding:var(--space-2xl) var(--space-md)}
   font-family:var(--font-mono);
   font-size:0.75rem;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:var(--space-sm);
+  color:var(--color-ink);margin-bottom:var(--space-sm);
   display:block;
 }
+/* gold eyebrow only on dark sections (hero is ink bg) */
+#hero .mono-label{color:var(--gold)}
 .divider{
   border:0;height:1px;background:var(--border);
   margin:0 auto;max-width:var(--max-w);
@@ -272,7 +274,7 @@ section{padding:var(--space-2xl) var(--space-md)}
 .cap-card:hover{border-color:var(--gold)}
 .cap-icon{margin-bottom:var(--space-sm);color:var(--gold)}
 .cap-icon svg{width:32px;height:32px;display:block}
-.cap-title{font-size:1rem;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:var(--space-xs);letter-spacing:0.06em}
+.cap-title{font-size:1rem;font-weight:700;color:var(--color-ink);text-transform:uppercase;margin-bottom:var(--space-xs);letter-spacing:0.06em}
 .cap-text{font-size:0.85rem;color:var(--muted);line-height:1.6}
 
 /* ===== PROCESS TIMELINE ===== */
@@ -324,7 +326,7 @@ section{padding:var(--space-2xl) var(--space-md)}
 .lead-time-table th,.lead-time-table td{
   padding:10px var(--space-sm);text-align:left;border-bottom:1px solid var(--border);
 }
-.lead-time-table th{font-weight:600;color:var(--gold);text-transform:uppercase;font-size:0.75rem}
+.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem}
 .lead-time-table td{color:var(--muted)}
 
 /* ===== PRODUCTS ===== */
@@ -611,6 +613,8 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
       <a href="#products" lang="en">Products</a>
       <a href="#quality" lang="vi">Chất Lượng</a>
       <a href="#quality" lang="en">Quality</a>
+      <a href="blog.html" lang="vi">Blog</a>
+      <a href="blog.html" lang="en">Blog</a>
       <a href="#contact" lang="vi">Liên Hệ</a>
       <a href="#contact" lang="en">Contact</a>
       <div class="nav-actions">
@@ -632,7 +636,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
       <p class="hero-p">Minh Tùng Studio là đối tác sản xuất túi, balo, cặp cho các thương hiệu thời trang, streetwear và startup. OEM / ODM — MOQ linh hoạt, báo giá minh bạch.</p>
     </div>
     <div lang="en">
-      <h2 class="hero-h1">Custom Bag Manufacturing<br>in Vietnam</h2>
+      <h1 class="hero-h1">Custom Bag Manufacturing<br>in Vietnam</h1>
       <h2 class="hero-h2">From 300 Pieces</h2>
       <p class="hero-p">Minh Tùng Studio is your production partner — working with fashion brands, streetwear labels, and startups to develop and manufacture custom backpacks, sling bags, duffels, totes, and leather accessories.</p>
     </div>
@@ -823,7 +827,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== FACTORY / FACILITY GALLERY ===== -->
 <section id="factory">
   <div class="section-inner reveal">
-    <span class="mono-label">05 — NHÀ MÁY / FACILITY</span>
+    <span class="mono-label">06 — NHÀ MÁY / FACILITY</span>
     <h2 class="section-title" lang="vi">Xưởng Sản Xuất Của Chúng Tôi</h2>
     <h2 class="section-title" lang="en">Inside Our Workshop</h2>
     <p class="section-sub" lang="vi">Quy trình khép kín — từ cắt, may, logo đến kiểm định.</p>
@@ -842,7 +846,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== SERVICES ===== -->
 <section id="services">
   <div class="section-inner reveal">
-    <span class="mono-label">06 — DỊCH VỤ / SERVICES</span>
+    <span class="mono-label">07 — DỊCH VỤ / SERVICES</span>
     <h2 class="section-title" lang="vi">Dịch Vụ Gia Công</h2>
     <h2 class="section-title" lang="en">Manufacturing Services</h2>
     <p class="section-sub" lang="vi">Từ OEM đến ODM — chúng tôi hiện thực hóa thiết kế của bạn.</p>
@@ -905,7 +909,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== PRODUCTS ===== -->
 <section id="products">
   <div class="section-inner reveal">
-    <span class="mono-label">07 — SẢN PHẨM / PRODUCTS</span>
+    <span class="mono-label">08 — SẢN PHẨM / PRODUCTS</span>
     <h2 class="section-title" lang="vi">Sản Phẩm Của Chúng Tôi</h2>
     <h2 class="section-title" lang="en">What We Make</h2>
     <p class="section-sub" lang="vi">Danh mục sản phẩm cho đối tác B2B.</p>
@@ -960,7 +964,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== QUALITY ===== -->
 <section id="quality">
   <div class="section-inner reveal">
-    <span class="mono-label">08 — CHẤT LƯỢNG / QUALITY</span>
+    <span class="mono-label">09 — CHẤT LƯỢNG / QUALITY</span>
     <h2 class="section-title" lang="vi">Kiểm Soát Chất Lượng</h2>
     <h2 class="section-title" lang="en">Quality Control</h2>
     <p class="section-sub" lang="vi">Từng lô hàng được kiểm định. Từng chi tiết được ghi nhận.</p>
@@ -1011,7 +1015,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== CERTIFICATIONS ===== -->
 <section id="certifications">
   <div class="section-inner reveal">
-    <span class="mono-label">09 — CHỨNG CHỈ / CERTIFICATIONS</span>
+    <span class="mono-label">10 — CHỨNG CHỈ / CERTIFICATIONS</span>
     <h2 class="section-title" lang="vi">Được Kiểm Định, Đạt Chuẩn</h2>
     <h2 class="section-title" lang="en">Audited, Qualified, Accountable</h2>
     <p class="section-sub" lang="vi">Chúng tôi đang hướng tới các chứng chỉ quốc tế — minh bạch về lộ trình.</p>
@@ -1037,7 +1041,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="section-inner reveal">
-    <span class="mono-label">10 — LIÊN HỆ / CONTACT</span>
+    <span class="mono-label">11 — LIÊN HỆ / CONTACT</span>
     <h2 class="section-title" lang="vi">Liên Hệ & Báo Giá</h2>
     <h2 class="section-title" lang="en">Start Your Project</h2>
     <p class="section-sub" lang="vi">Gửi thiết kế của bạn — chúng tôi sẽ báo giá trong vòng 48 giờ, không cam kết.</p>
@@ -1160,7 +1164,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 <!-- ===== CTA ===== -->
 <section id="cta">
   <div class="section-inner reveal">
-    <span class="mono-label">11 — BẮT ĐẦU / GET STARTED</span>
+    <span class="mono-label">12 — BẮT ĐẦU / GET STARTED</span>
     <h2 lang="vi">Sẵn sàng bắt đầu sản xuất?</h2>
     <h2 lang="en">Ready to start your production?</h2>
     <p lang="vi">Kể tôi nghe về dự án của bạn → tôi sẽ phản hồi trong 24h</p>
@@ -1195,6 +1199,8 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
       <a href="#products" lang="en">Products</a><br>
       <a href="#quality" lang="vi">Chất Lượng</a><br>
       <a href="#quality" lang="en">Quality</a><br>
+      <a href="blog.html" lang="vi">Blog</a><br>
+      <a href="blog.html" lang="en">Blog</a><br>
       <a href="#contact" lang="vi">Liên Hệ</a><br>
       <a href="#contact" lang="en">Contact</a>
     </div>

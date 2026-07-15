@@ -143,9 +143,11 @@ section{padding:var(--space-2xl) var(--space-md)}
   font-family:var(--font-mono);
   font-size:0.75rem;font-weight:600;
   letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:var(--space-sm);
+  color:var(--color-ink);margin-bottom:var(--space-sm);
   display:block;
 }
+/* gold eyebrow only on dark sections (hero is ink bg) */
+#hero .mono-label{color:var(--gold)}
 .divider{
   border:0;height:1px;background:var(--border);
   margin:0 auto;max-width:var(--max-w);
@@ -236,7 +238,7 @@ section{padding:var(--space-2xl) var(--space-md)}
 .cap-card:hover{border-color:var(--gold)}
 .cap-icon{margin-bottom:var(--space-sm);color:var(--gold)}
 .cap-icon svg{width:32px;height:32px;display:block}
-.cap-title{font-size:1rem;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:var(--space-xs);letter-spacing:0.06em}
+.cap-title{font-size:1rem;font-weight:700;color:var(--color-ink);text-transform:uppercase;margin-bottom:var(--space-xs);letter-spacing:0.06em}
 .cap-text{font-size:0.85rem;color:var(--muted);line-height:1.6}
 
 /* ===== PROCESS TIMELINE ===== */
@@ -288,7 +290,7 @@ section{padding:var(--space-2xl) var(--space-md)}
 .lead-time-table th,.lead-time-table td{
   padding:10px var(--space-sm);text-align:left;border-bottom:1px solid var(--border);
 }
-.lead-time-table th{font-weight:600;color:var(--gold);text-transform:uppercase;font-size:0.75rem}
+.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem}
 .lead-time-table td{color:var(--muted)}
 
 /* ===== PRODUCTS ===== */
@@ -615,7 +617,7 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
   padding:10px var(--space-sm);text-align:left;border-bottom:1px solid var(--border);
 }
 .blog-post .blog-table-wrap th{
-  font-weight:600;color:var(--gold);text-transform:uppercase;font-size:0.75rem;
+  font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem;
 }
 .blog-post .blog-table-wrap td{color:var(--muted)}
 .blog-post .blog-cta-box{
@@ -642,6 +644,6 @@ nav.nav-scrolled .nav-logo-text{font-size:0.95rem}
 /* language section label */
 .blog-post .lang-section-label{
   font-family:var(--font-mono);font-size:0.75rem;font-weight:600;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--color-ink);
   margin:var(--space-lg) 0 var(--space-sm);display:block;
 }
