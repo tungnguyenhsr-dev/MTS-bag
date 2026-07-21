@@ -3,453 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  document.documentElement.className += ' js';
-  try {
-    var t = localStorage.getItem('mts-theme');
-    if (t === 'dark') document.documentElement.classList.add('theme-dark');
-    else if (t === 'light') document.documentElement.classList.add('theme-light');
-  } catch(e) {}
-</script>
-<title>Blog — Minh Tùng Studio | OEM Bag Manufacturer Vietnam</title>
-<meta name="description" content="Guides for brands sourcing bag manufacturing in Vietnam: OEM/ODM, MOQ, lead time, and how to start a bag brand. By Minh Tùng Studio.">
-<link rel="canonical" href="https://mts-bag.vercel.app/blog.html">
-<meta property="og:title" content="Blog — Minh Tùng Studio">
-<meta property="og:description" content="Guides for brands sourcing bag manufacturing in Vietnam.">
+<title>MTS Blog — Bag Manufacturing Guides &amp; Sourcing (Vietnam OEM/ODM)</title>
+<meta name="description" content="Guides for brands sourcing bags from Vietnam: how to choose an OEM bag manufacturer, and how to start a bag brand with low MOQ. By Minh Tùng Studio.">
+<link rel="canonical" href="https://mtsbag.vercel.app/blog.html">
+<meta property="og:title" content="MTS Blog — Bag Manufacturing &amp; Sourcing Guides">
+<meta property="og:description" content="OEM bag manufacturer Vietnam guide + how to start a bag brand. By Minh Tùng Studio.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mts-bag.vercel.app/blog.html">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="apple-touch-icon" href="assets/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/mts.css?v=20260715b">
-
+<meta property="og:url" content="https://mtsbag.vercel.app/blog.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://mts-bag.vercel.app/blog.html#oem-guide",
-      "headline": "OEM Bag Manufacturer Vietnam — Full Guide (MOQ, Lead Time, Cost)",
-      "alternativeHeadline": "Xưởng Gia Công Túi OEM Tại Việt Nam — Hướng Dẫn Đầy Đủ",
-      "description": "Complete guide to OEM bag manufacturing in Vietnam. Covers MOQ 300, lead times 10-25 days, OEM vs ODM, AQL 2.5 quality control, and how to start.",
-      "author": {
-        "@type": "Person",
-        "name": "Nguyễn Mạnh Tùng (Tommy)",
-        "jobTitle": "Founder & Production Director",
-        "knowsAbout": "OEM Bag Manufacturing, ODM, Leather Goods Production"
-      },
-      "publisher": {
-        "@id": "https://mtsbag.vercel.app/#organization"
-      },
-      "image": "https://mts-bag.vercel.app/images/og-image.png",
-      "datePublished": "2025-06-15",
-      "dateModified": "2026-07-15",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mts-bag.vercel.app/blog.html#oem-guide"
-      },
-      "inLanguage": ["vi", "en"],
-      "isAccessibleForFree": true
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://mts-bag.vercel.app/blog.html#start-brand",
-      "headline": "How to Start a Bag Brand — Sourcing & Manufacturing 101",
-      "alternativeHeadline": "Cách Bắt Đầu Thương Hiệu Túi — Sourcing & Sản Xuất 101",
-      "description": "7-step guide for starting a bag brand: define your line, choose materials, find the right factory, understand MOQ, sampling, production, and launch.",
-      "author": {
-        "@type": "Person",
-        "name": "Nguyễn Mạnh Tùng (Tommy)",
-        "jobTitle": "Founder & Production Director",
-        "knowsAbout": "OEM Bag Manufacturing, ODM, Leather Goods Production"
-      },
-      "publisher": {
-        "@id": "https://mtsbag.vercel.app/#organization"
-      },
-      "image": "https://mts-bag.vercel.app/images/og-image.png",
-      "datePublished": "2025-08-20",
-      "dateModified": "2026-07-15",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://mts-bag.vercel.app/blog.html#start-brand"
-      },
-      "inLanguage": ["vi", "en"],
-      "isAccessibleForFree": true
-    }
+  "@type": "ItemList",
+  "name": "MTS Blog — Bag Manufacturing & Sourcing Guides",
+  "description": "Guides for brands sourcing bags from Vietnam: how to choose an OEM bag manufacturer, and how to start a bag brand with low MOQ.",
+  "url": "https://mtsbag.vercel.app/blog.html",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "url": "https://mtsbag.vercel.app/blog-oem-bag-vietnam.html", "name": "OEM Bag Manufacturer Vietnam: How to Source Custom Bags & Backpacks"},
+    {"@type": "ListItem", "position": 2, "url": "https://mtsbag.vercel.app/blog-start-bag-brand.html", "name": "How to Start a Bag Brand in 2026: A Founder's Step-by-Step Guide"}
   ]
 }
 </script>
+<style>
+:root{
+  --color-bg:#F5F0EB;--color-surface:#FFFFFF;--color-ink:#1A1A1A;
+  --color-accent:#C8A96E;--color-text:#1A1A1A;--color-muted:#6B6258;
+  --color-border:#E2D9CC;--max-w:860px;--radius-lg:16px;
+  --space-sm:16px;--space-md:24px;--space-lg:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;color:var(--color-text);background:var(--color-bg);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:var(--space-lg) var(--space-md)}
+a{color:var(--color-accent);text-decoration:none;border-bottom:1px solid var(--color-accent)}
+a:hover{color:var(--color-ink)}
+header{padding:var(--space-lg) var(--space-md) 0;max-width:var(--max-w);margin:0 auto}
+nav{padding:var(--space-sm) 0}
+nav a{color:var(--color-muted);border:none;font-size:0.85rem;font-weight:600}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:var(--space-sm);letter-spacing:-0.02em}
+.meta{font-size:0.85rem;color:var(--color-muted);margin-bottom:var(--space-lg)}
+.card{display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-md);margin:var(--space-sm) 0;background:var(--color-surface);text-decoration:none;border-bottom:1px solid var(--color-border);transition:border-color .2s}
+.card:hover{border-color:var(--color-accent)}
+.card h2{font-size:1.3rem;margin:0 0 var(--space-xs);color:var(--color-ink)}
+.card p{color:var(--color-muted);margin:0;font-size:0.95rem}
+.card .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-xs)}
+footer{padding:var(--space-lg) var(--space-md);border-top:1px solid var(--color-border);text-align:center;font-size:0.8rem;color:var(--color-muted)}
+</style>
 </head>
 <body>
+<header>
+  <nav><a href="index.html">← Minh Tùng Studio</a></nav>
+</header>
+<article class="wrap">
+  <span class="meta">Minh Tùng Studio · Bag manufacturing &amp; sourcing journal · Vietnam OEM/ODM</span>
+  <h1>MTS Blog — Bag Manufacturing Guides</h1>
+  <p class="meta" style="margin-bottom:var(--space-md)">Last updated: 2026-07-16 · Practical guides for fashion brands, streetwear labels, and startups sourcing custom bags and backpacks from Vietnam.</p>
 
-<!-- ===== NAVIGATION ===== -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html#hero" class="nav-logo" aria-label="Minh Tùng Studio — Home">
-      <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="nav-logo-img logo-light">
-      <img src="assets/mts-logo-light.svg" alt="Minh Tùng Studio" class="nav-logo-img logo-dark">
-    </a>
-    <input type="checkbox" id="menu-toggle" hidden>
-    <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation menu"><span></span><span></span><span></span></label>
-    <div class="nav-links">
-      <a href="index.html#about" lang="vi">Giới Thiệu</a>
-      <a href="index.html#about" lang="en">About</a>
-      <a href="index.html#factory" lang="vi">Nhà Máy</a>
-      <a href="index.html#factory" lang="en">Facility</a>
-      <a href="index.html#services" lang="vi">Dịch Vụ</a>
-      <a href="index.html#services" lang="en">Services</a>
-      <a href="index.html#products" lang="vi">Sản Phẩm</a>
-      <a href="index.html#products" lang="en">Products</a>
-      <a href="index.html#quality" lang="vi">Chất Lượng</a>
-      <a href="index.html#quality" lang="en">Quality</a>
-      <a href="index.html#contact" lang="vi">Liên Hệ</a>
-      <a href="index.html#contact" lang="en">Contact</a>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-        <button class="lang-toggle" id="langToggle" type="button" aria-label="Toggle language">EN <span class="globe"></span></button>
-      </div>
-    </div>
-  </div>
-</nav>
+  <a class="card" href="blog-oem-bag-vietnam.html">
+    <span class="tag">Sourcing · OEM/ODM</span>
+    <h2>OEM Bag Manufacturer Vietnam: How to Source Custom Bags &amp; Backpacks</h2>
+    <p>What an OEM bag factory does, MOQ and lead-time expectations, OEM vs ODM, and how MTS produces bags from 300 pieces in Ho Chi Minh City.</p>
+  </a>
 
-<!-- ===== BLOG MASTHEAD ===== -->
-<section id="blog-hero" class="blog-hero" data-od-id="blog-masthead">
-  <div class="section-inner reveal">
-    <span class="mono-label">BLOG / RESOURCES</span>
-    <h1 class="section-title" lang="vi">Kiến Thức Sản Xuất Túi</h1>
-    <h1 class="section-title" lang="en">Bag Manufacturing Insights</h1>
-    <p class="section-sub" lang="vi">Hướng dẫn cho brand tìm đối tác sản xuất túi tại Việt Nam.</p>
-    <p class="section-sub" lang="en">Guides for brands sourcing bag manufacturing in Vietnam.</p>
-  </div>
-</section>
+  <a class="card" href="blog-start-bag-brand.html">
+    <span class="tag">Founders · Start a brand</span>
+    <h2>How to Start a Bag Brand in 2026: A Founder's Step-by-Step Guide</h2>
+    <p>From niche and techpack to sampling, manufacturing, and launch — with low-MOQ Vietnam OEM/ODM sourcing (MOQ 300, free sample).</p>
+  </a>
 
-<!-- ===== ARTICLE INDEX ===== -->
-<section id="blog">
-  <div class="section-inner reveal">
-    <div class="blog-grid">
-
-      <article class="blog-card" data-od-id="blog-card-oem">
-        <a href="#oem-guide" class="blog-card-media" aria-label="OEM Bag Manufacturer Vietnam">
-          <img src="images/factory-sewing-station.png" alt="MTS factory sewing station" loading="lazy">
-        </a>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">OEM</span>
-          <h2 class="blog-card-title" lang="vi">Xưởng Gia Công Túi OEM Tại Việt Nam — Hướng Dẫn Đầy Đủ</h2>
-          <h2 class="blog-card-title" lang="en">OEM Bag Manufacturer Vietnam — Full Guide</h2>
-          <p class="blog-card-excerpt" lang="vi">Việt Nam là trung tâm sản xuất túi toàn cầu. MTS là đối tác khép kín: cắt, may, QC, đóng gói trong một mái nhà — MOQ 300, lead time 10–25 ngày.</p>
-          <p class="blog-card-excerpt" lang="en">Vietnam is a global hub for bag manufacturing. MTS is a closed-loop partner — cut, sew, QC, pack in-house. MOQ 300, lead time 10–25 days.</p>
-          <div class="blog-card-meta">
-            <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 MIN READ</span>
-            <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>15/07/2026</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="blog-card" data-od-id="blog-card-start">
-        <a href="#start-brand" class="blog-card-media" aria-label="How to Start a Bag Brand">
-          <img src="images/product-tote-bag.png" alt="MTS tote bag product" loading="lazy">
-        </a>
-        <div class="blog-card-body">
-          <span class="blog-card-cat">STARTUP</span>
-          <h2 class="blog-card-title" lang="vi">Cách Bắt Đầu Thương Hiệu Túi — Sourcing & Sản Xuất 101</h2>
-          <h2 class="blog-card-title" lang="en">How to Start a Bag Brand — Sourcing & Manufacturing 101</h2>
-          <p class="blog-card-excerpt" lang="vi">Từ định hình dòng túi đến ra mắt: 7 bước chọn vật liệu, tìm xưởng, MOQ & làm mẫu, sản xuất và reorder. MTS đồng hành từ brief đến hàng giao.</p>
-          <p class="blog-card-excerpt" lang="en">From defining your line to launch: 7 steps for materials, finding a factory, MOQ & sampling, production and reorder. MTS takes you from brief to delivery.</p>
-          <div class="blog-card-meta">
-            <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 MIN READ</span>
-            <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>15/07/2026</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== POST 1 ===== -->
-<section id="oem-guide" class="blog-post">
-  <div class="section-inner reveal">
-    <figure class="blog-cover" data-od-id="oem-cover"><img src="images/factory-assembly-line.png" alt="MTS factory assembly line" loading="lazy"></figure>
-    <span class="blog-card-cat">OEM</span>
-    <h2 class="blog-post-title" lang="vi">Xưởng Gia Công Túi OEM Tại Việt Nam — Hướng Dẫn Đầy Đủ</h2>
-    <h2 class="blog-post-title" lang="en">OEM Bag Manufacturer Vietnam — Full Guide (MOQ, Lead Time, Cost)</h2>
-
-    <div class="blog-meta-row">
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>By Nguyễn Mạnh Tùng (Tommy) — Founder &amp; Production Director, MTS</span>
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated 15/07/2026</span>
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>5 min read</span>
-    </div>
-
-    <div class="blog-answer">
-      <span class="blog-answer-chip">QUICK ANSWER</span>
-      <p lang="vi"><strong>OEM bag manufacturer ở Việt Nam là gì?</strong> OEM (Original Equipment Manufacturer) là xưởng sản xuất túi, balo theo thiết kế có sẵn của khách hàng. Minh Tùng Studio (MTS) tại TP.HCM là xưởng khép kín — tự cắt, may, QC và đóng gói. MOQ 300 sản phẩm / SKU, thời gian 10–25 ngày, mẫu thử miễn phí. Phục vụ thương hiệu thời trang, streetwear và startup.</p>
-      <p lang="en"><strong>What is an OEM bag manufacturer in Vietnam?</strong> An OEM (Original Equipment Manufacturer) produces bags and backpacks according to the buyer's existing designs. MTS in Ho Chi Minh City is a closed-loop factory — we cut, sew, QC, and pack in-house. MOQ 300 pieces/SKU, lead time 10–25 days, free trial samples. We serve fashion brands, streetwear labels, and startups globally.</p>
-    </div>
-
-    <h2 lang="vi">Tại sao chọn xưởng gia công túi OEM tại Việt Nam?</h2>
-    <h2 lang="en">Why choose an OEM bag manufacturer in Vietnam?</h2>
-    <p lang="vi">Việt Nam đã trở thành trung tâm sản xuất túi, balo và phụ kiện toàn cầu nhờ chi phí nhân công cạnh tranh, tay nghề may khéo và ưu đãi thuế xuất khẩu Mỹ/EU. Minh Tùng Studio (MTS) là <strong>đối tác sản xuất khép kín (closed-loop)</strong>: cắt, may, kiểm, đóng gói trong một mái nhà.</p>
-    <p lang="en">Vietnam has become a global hub for bag, backpack, and accessory manufacturing thanks to competitive labor cost, skilled sewing craftsmanship, and tariff advantages for export to the US and EU. MTS is a <strong>closed-loop manufacturing partner</strong>: we cut, sew, QC, and pack under one roof.</p>
-    <p lang="vi"><a href="index.html#capabilities" class="blog-inline-link">Xem năng lực sản xuất của MTS →</a></p>
-    <p lang="en"><a href="index.html#capabilities" class="blog-inline-link">View MTS production capabilities →</a></p>
-
-    <h2 lang="vi">"OEM" và "ODM" nghĩa là gì?</h2>
-    <h2 lang="en">What "OEM" and "ODM" mean</h2>
-    <p lang="vi"><strong>OEM:</strong> bạn cung cấp thiết kế, tech pack, quy cách vật liệu — chúng tôi sản xuất. <strong>ODM:</strong> chúng tôi hỗ trợ phát triển thiết kế từ brief, tối ưu vật liệu và gia công. MTS làm cả hai.</p>
-    <p lang="en"><strong>OEM:</strong> you provide the design, tech pack, and material spec — we produce it. <strong>ODM:</strong> we help develop the design from your brief. MTS offers both.</p>
-    <p lang="vi"><a href="index.html#services" class="blog-inline-link">Xem bảng so sánh OEM vs ODM và dịch vụ chi tiết →</a></p>
-    <p lang="en"><a href="index.html#services" class="blog-inline-link">See OEM vs ODM comparison table and full services →</a></p>
-
-    <h2 lang="vi">Số lượng đặt tối thiểu (MOQ)</h2>
-    <h2 lang="en">Minimum Order Quantity (MOQ)</h2>
-    <div class="blog-table-wrap">
-      <table>
-        <tr><th>Hạng mục</th><th>MOQ</th><th>Ưu đãi</th></tr>
-        <tr><td>Tiêu chuẩn</td><td>300 pcs/SKU</td><td>Giá cơ bản</td></tr>
-        <tr><td>Số lượng lớn</td><td>1.000+ pcs/SKU</td><td>Giảm 8–15%</td></tr>
-        <tr><td>Đa SKU</td><td>2+ SKUs</td><td>+5% tổng đơn</td></tr>
-      </table>
-    </div>
-
-    <h2 lang="vi">Thời gian sản xuất</h2>
-    <h2 lang="en">Lead time</h2>
-    <div class="blog-table-wrap">
-      <table>
-        <tr><th>Sản phẩm</th><th>Chất liệu</th><th>Thời gian</th></tr>
-        <tr><td>Tote gấp gọn</td><td>Canvas + da</td><td>10–18 ngày</td></tr>
-        <tr><td>Tote cấu trúc</td><td>PU da</td><td>15–25 ngày</td></tr>
-        <tr><td>Túi đeo chéo / Sling</td><td>PU / Canvas</td><td>15–25 ngày</td></tr>
-        <tr><td>Balo</td><td>Hỗn hợp</td><td>20–25 ngày</td></tr>
-        <tr><td>Túi du lịch / Duffel</td><td>Nhiều loại</td><td>20–25 ngày</td></tr>
-        <tr><td>Phụ kiện da</td><td>Da thật / PU</td><td>10–15 ngày</td></tr>
-      </table>
-    </div>
-
-    <h2 lang="vi">Kiểm soát chất lượng</h2>
-    <h2 lang="en">Quality control</h2>
-    <p lang="vi">Mỗi lô hàng qua: kiểm đầu vào → kiểm trong sản xuất → kiểm trước hoàn thiện → kiểm cuối AQL 2.5 (đường may, phụ kiện kim loại, logo, sạch sẽ, đóng gói). Ảnh gửi khách duyệt trước khi ship.</p>
-    <p lang="en">Every batch passes: incoming material check → in-line check → pre-finish inspection → final AQL 2.5 inspection. Photos sent to clients for approval before shipment.</p>
-    <p lang="vi"><a href="index.html#quality" class="blog-inline-link">Xem chi tiết quy trình QC của MTS →</a></p>
-    <p lang="en"><a href="index.html#quality" class="blog-inline-link">See detailed MTS quality control process →</a></p>
-
-    <h2 lang="vi">Cách bắt đầu</h2>
-    <h2 lang="en">How to start</h2>
-    <p lang="vi">1. Gửi brief hoặc ảnh tham khảo · 2. Chúng tôi báo giá minh bạch · 3. Làm mẫu (có mẫu thử miễn phí) · 4. Sản xuất & QC · 5. Đóng gói & vận chuyển.</p>
-    <p lang="en">1. Send your brief · 2. We quote transparently · 3. Sampling (free trial sample) · 4. Production & QC · 5. Packing & shipping.</p>
-
-    <div class="author-card">
-      <div class="author-avatar" aria-hidden="true">NT</div>
-      <div class="author-info">
-        <strong>Nguyễn Mạnh Tùng (Tommy)</strong>
-        <span>Founder &amp; Production Director, MTS — writes the OEM/ODM guides from the factory floor.</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== POST 2 ===== -->
-<section id="start-brand" class="blog-post">
-  <div class="section-inner reveal">
-    <figure class="blog-cover" data-od-id="start-cover"><img src="images/product-backpack-1.png" alt="MTS backpack product" loading="lazy"></figure>
-    <span class="blog-card-cat">STARTUP</span>
-    <h2 class="blog-post-title" lang="vi">Cách Bắt Đầu Thương Hiệu Túi — Sourcing & Sản Xuất 101</h2>
-    <h2 class="blog-post-title" lang="en">How to Start a Bag Brand — Sourcing & Manufacturing 101</h2>
-
-    <div class="blog-meta-row">
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>By Nguyễn Mạnh Tùng (Tommy) — Founder &amp; Production Director, MTS</span>
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Updated 15/07/2026</span>
-      <span class="meta-item"><svg class="meta-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6 min read</span>
-    </div>
-
-    <div class="blog-answer">
-      <span class="blog-answer-chip">QUICK ANSWER</span>
-      <p lang="vi"><strong>Làm sao để bắt đầu thương hiệu túi?</strong> Bắt đầu từ việc định hình dòng sản phẩm, chọn chất liệu, tìm xưởng sản xuất uy tín tại Việt Nam, hiểu MOQ, đặt mẫu thử, sản xuất lô đầu và ra mắt. Với MTS, bạn chỉ cần MOQ 300 sản phẩm/SKU, mẫu thử miễn phí, và toàn bộ quy trình từ brief đến hàng giao trong 6–8 tuần.</p>
-      <p lang="en"><strong>How do I start a bag brand?</strong> Start by defining your product line, choosing materials, finding a reliable manufacturer in Vietnam, understanding MOQ and sampling, producing your first run, and launching. With MTS, you need only 300 pcs/SKU MOQ, get free trial samples, and the full process from brief to delivery takes 6–8 weeks.</p>
-    </div>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">1</span><span lang="vi">Định hình dòng túi</span><span lang="en">Define your bag line</span></h2>
-    <p lang="vi">Bắt đầu bằng trọng tâm rõ ràng: balo, sling, tote, duffel hay phụ kiện da? Chốt 1–3 sản phẩm chủ lực trước khi tìm xưởng.</p>
-    <p lang="en">Start with a clear product focus. Nail down 1–3 hero products before sourcing.</p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">2</span><span lang="vi">Chọn vật liệu</span><span lang="en">Choose materials</span></h2>
-    <p lang="vi">Canvas (bền, rẻ), da PU (sang, tầm trung), da thật (luxury), nylon/ripstop (nhẹ, kỹ thuật). MTS hỗ trợ cân bằng ngân sách trong giai đoạn ODM.</p>
-    <p lang="en">Canvas (durable, affordable), PU leather (premium, mid cost), real leather (luxury), nylon/ripstop (lightweight). MTS helps balance budget in ODM stage.</p>
-    <p lang="vi"><a href="index.html#products" class="blog-inline-link">Xem bảng so sánh chất liệu và sản phẩm mẫu →</a></p>
-    <p lang="en"><a href="index.html#products" class="blog-inline-link">See material comparison table and sample products →</a></p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">3</span><span lang="vi">Tìm đúng nhà máy</span><span lang="en">Find the right manufacturer</span></h2>
-    <p lang="vi">Tìm <strong>đối tác sản xuất</strong>, không chỉ người bán. Kiểm tra: cắt/may/QC tại chỗ? MOQ? Làm mẫu nhanh? Ảnh xưởng thật? Dấu hiệu lừa: bên thương mại không show được xưởng.</p>
-    <p lang="en">Look for a <strong>production partner</strong>. Check: in-house cut/sew/QC? MOQ? Fast sampling? Real factory photos? Red flag: traders who can't show the floor.</p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">4</span><span lang="vi">MOQ &amp; làm mẫu</span><span lang="en">MOQ &amp; sampling</span></h2>
-    <p lang="vi">Xưởng lớn đòi 1.000–5.000; rủi ro với brand mới. <strong>MOQ MTS là 300/SKU</strong> kèm mẫu thử miễn phí. Luôn đòi mẫu thật trước sản xuất hàng loạt.</p>
-    <p lang="en">Large factories demand 1,000–5,000. <strong>MTS MOQ is 300/SKU</strong> with a free trial sample. Always request a physical sample first.</p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">5</span><span lang="vi">Ngân sách &amp; tiến độ</span><span lang="en">Budget &amp; timeline</span></h2>
-    <div class="blog-table-wrap">
-      <table>
-        <tr><th>Hạng mục</th><th>Thời gian</th></tr>
-        <tr><td>Làm mẫu</td><td>7–14 ngày</td></tr>
-        <tr><td>Sản xuất</td><td>10–25 ngày</td></tr>
-        <tr><td>Vận chuyển</td><td>tùy phương thức</td></tr>
-      </table>
-    </div>
-    <p lang="vi">Tính 6–8 tuần từ brief đến hàng giao cho lô đầu.</p>
-    <p lang="en">Plan 6–8 weeks from brief to delivered goods for a first run.</p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">6</span><span lang="vi">Sản xuất &amp; QC</span><span lang="en">Production &amp; QC</span></h2>
-    <p lang="vi">Sau khi duyệt mẫu, bắt đầu sản xuất. Đòi kiểm AQL 2.5 và duyệt ảnh trước khi ship. MTS gửi ảnh QC từng giai đoạn.</p>
-    <p lang="en">After sample approval, production begins. Insist on AQL 2.5 and photo approval. MTS sends QC photos at every stage.</p>
-
-    <h2 class="blog-step-title"><span class="blog-step-num">7</span><span lang="vi">Ra mắt &amp; đặt lại</span><span lang="en">Launch &amp; reorder</span></h2>
-    <p lang="vi">Thử thị trường, thu feedback, rồi đặt lại. Mở rộng từ 300 lên 1.000+ được giá tốt hơn.</p>
-    <p lang="en">Test the market, gather feedback, then reorder. Scaling from 300 to 1,000+ unlocks better pricing.</p>
-
-
-
-    <div class="author-card">
-      <div class="author-avatar" aria-hidden="true">NT</div>
-      <div class="author-info">
-        <strong>Nguyễn Mạnh Tùng (Tommy)</strong>
-        <span>Founder &amp; Production Director, MTS — writes the startup sourcing guides from the factory floor.</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
+  <p style="margin-top:var(--space-lg)"><a href="index.html#contact">Talk to MTS about your bag line →</a></p>
+</article>
 <footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">
-        <img src="assets/mts-logo-dark.svg" alt="Minh Tùng Studio" class="footer-logo-img logo-light">
-        <img src="assets/mts-logo-light.svg" alt="Minh Tùng Studio" class="footer-logo-img logo-dark">
-      </div>
-      <p lang="vi">Sản Xuất Túi / Balo Tại Việt Nam</p>
-      <p lang="en">Bag &amp; Backpack Manufacturing in Vietnam</p>
-    </div>
-    <div>
-      <h4 lang="vi">Liên Kết Nhanh</h4>
-      <h4 lang="en">Quick Links</h4>
-      <a href="index.html#about" lang="vi">Giới Thiệu</a><br>
-      <a href="index.html#products" lang="vi">Sản Phẩm</a><br>
-      <a href="blog.html" lang="vi">Blog</a><br>
-      <a href="index.html#contact" lang="vi">Liên Hệ</a>
-    </div>
-    <div>
-      <h4 lang="vi">Liên Hệ</h4>
-      <h4 lang="en">Contact</h4>
-      <p><span class="mono-label" style="margin:0">EMAIL</span> tungnguyenhsr@gmail.com</p>
-      <p><span class="mono-label" style="margin:0">ZALO</span> +84 773 108 320 (Tùng)</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Minh Tùng Studio. Tất cả quyền được bảo lưu.</p>
-  </div>
+  © 2026 Minh Tùng Studio — OEM / ODM bag &amp; backpack manufacturer, Ho Chi Minh City, Vietnam.
 </footer>
-
-<!-- ===== BACK TO TOP ===== -->
-<button id="back-to-top" type="button" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
-</button>
-
-<script>
-document.addEventListener('DOMContentLoaded', function(){
- try {
-  var body = document.body;
-  var btn = document.getElementById('langToggle');
-  var saved = null;
-  try { saved = localStorage.getItem('mts-lang'); } catch(e) { saved = null; }
-  if (saved === 'en') body.classList.add('show-en');
-  function updateBtn(){
-    if (body.classList.contains('show-en')) {
-      btn.innerHTML = 'VI <span class="globe"></span>';
-      document.documentElement.lang = 'en';
-    } else {
-      btn.innerHTML = 'EN <span class="globe"></span>';
-      document.documentElement.lang = 'vi';
-    }
-  }
-  updateBtn();
-  if (btn) btn.addEventListener('click', function(){
-    body.classList.toggle('show-en');
-    try { localStorage.setItem('mts-lang', body.classList.contains('show-en') ? 'en' : 'vi'); } catch(e) {}
-    updateBtn();
-  });
-
-  // Theme toggle (light/dark with system default)
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('themeToggle');
-  var darkMql = window.matchMedia('(prefers-color-scheme: dark)');
-  var SUN_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
-  var MOON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
-  function resolvedTheme(){
-    if (root.classList.contains('theme-dark')) return 'dark';
-    if (root.classList.contains('theme-light')) return 'light';
-    return darkMql.matches ? 'dark' : 'light';
-  }
-  function paintThemeBtn(){
-    var t = resolvedTheme();
-    themeBtn.innerHTML = (t === 'dark') ? SUN_SVG : MOON_SVG;
-    themeBtn.setAttribute('aria-label', (t === 'dark') ? 'Switch to light mode' : 'Switch to dark mode');
-  }
-  var savedTheme = null;
-  try { savedTheme = localStorage.getItem('mts-theme'); } catch(e) {}
-  if (savedTheme === 'dark') root.classList.add('theme-dark');
-  else if (savedTheme === 'light') root.classList.add('theme-light');
-  paintThemeBtn();
-  if (themeBtn) themeBtn.addEventListener('click', function(){
-    var cur = resolvedTheme();
-    root.classList.remove('theme-dark','theme-light');
-    var next = (cur === 'dark') ? 'light' : 'dark';
-    root.classList.add(next === 'dark' ? 'theme-dark' : 'theme-light');
-    try { localStorage.setItem('mts-theme', next); } catch(e) {}
-    paintThemeBtn();
-  });
-  if (darkMql.addEventListener) darkMql.addEventListener('change', function(){
-    if (!root.classList.contains('theme-dark') && !root.classList.contains('theme-light')) paintThemeBtn();
-  });
-
-  // Safe reveal: content visible by default; JS only adds the animation class.
-  document.documentElement.classList.add('reveal-active');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var targets = document.querySelectorAll('.reveal');
-  if (!reduce && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
-      });
-    }, {threshold:0.05, rootMargin:'0px 0px 60px 0px'});
-    targets.forEach(function(t){ io.observe(t); });
-  } else {
-    targets.forEach(function(t){ t.classList.add('in-view'); });
-  }
-
-  // Back to Top + Nav shrink (blog has no #hero, so drive from scroll position)
-  var backBtn = document.getElementById('back-to-top');
-  var nav = document.querySelector('nav');
-  function onScroll(){
-    var y = window.scrollY || document.documentElement.scrollTop || 0;
-    if (backBtn) backBtn.classList.toggle('visible', y > 300);
-    if (nav) nav.classList.toggle('nav-scrolled', y > 40);
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  if (backBtn) backBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
-  onScroll();
-
-  // Close the mobile menu after a link is tapped
-  var menuToggle = document.getElementById('menu-toggle');
-  document.querySelectorAll('.nav-links a').forEach(function(a){
-    a.addEventListener('click', function(){ if (menuToggle) menuToggle.checked = false; });
-  });
-
- } catch(err) {
-  console.error('MTS interaction script error:', err);
- }
-});
-</script>
 </body>
 </html>

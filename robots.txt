@@ -1,31 +1,24 @@
-# robots.txt for MTS (Minh Tùng Studio)
-# Allow all AI crawlers for citation and AI Overview visibility
+User-agent: *
+Allow: /
 
+# AI search & citation bots — explicitly allowed so engines can cite MTS directly
 User-agent: GPTBot
 Allow: /
-
 User-agent: ChatGPT-User
 Allow: /
-
 User-agent: PerplexityBot
 Allow: /
-
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: anthropic-ai
 Allow: /
-
 User-agent: Google-Extended
 Allow: /
-
 User-agent: Bingbot
 Allow: /
 
-# General rules
-User-agent: *
-Allow: /
-Disallow: /cgi-bin/
-Disallow: /private/
+# Block only the training-only crawler if desired (Common Crawl) — cite-crawlers stay open
+# User-agent: CCBot
+# Disallow: /
 
-Sitemap: https://mts-bag.vercel.app/sitemap.xml
+Sitemap: https://mtsbag.vercel.app/sitemap.xml
