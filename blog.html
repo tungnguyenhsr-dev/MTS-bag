@@ -296,47 +296,71 @@ section{padding:var(--space-2xl) var(--space-md)}
 
 /* ===== BLOG CARDS ===== */
 .blog-card{
-  display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);
-  padding:0;margin:var(--space-md) 0;
+  display:flex;gap:0;
+  border:1px solid var(--color-border);border-radius:var(--radius-lg);
+  margin:var(--space-md) 0;
   background:var(--color-surface);text-decoration:none;
   transition:transform .35s var(--ease-out),box-shadow .35s var(--ease-out),border-color .25s;
   overflow:hidden;
   box-shadow:var(--elevation-0);
+  min-height:180px;
 }
 .blog-card:hover{
   border-color:var(--gold);
-  transform:translateY(-4px);
+  transform:translateY(-3px);
   box-shadow:var(--elevation-2);
+}
+.blog-card-media{
+  flex:0 0 280px;overflow:hidden;position:relative;
+}
+.blog-card-media img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .45s var(--ease-out);
+  position:absolute;top:0;left:0;
+}
+.blog-card:hover .blog-card-media img{transform:scale(1.06)}
+.blog-card-body{
+  flex:1;padding:var(--space-md);display:flex;flex-direction:column;justify-content:center;
 }
 .blog-card-cat{
   display:block;
   font-family:var(--font-mono);
-  font-size:0.65rem;font-weight:600;
+  font-size:0.62rem;font-weight:600;
   letter-spacing:0.15em;text-transform:uppercase;
   color:var(--color-accent);
-  padding:var(--space-md) var(--space-md) 0 var(--space-md);
+  margin-bottom:var(--space-xs);
 }
 .blog-card-title{
-  font-size:1.15rem;font-weight:700;
+  font-size:1.1rem;font-weight:700;
   color:var(--color-ink);
-  margin:var(--space-xs) var(--space-md) var(--space-xs);
+  margin:0 0 var(--space-xs);
   line-height:1.35;
 }
-.blog-card-media{
-  margin:0;
-  overflow:hidden;
-  position:relative;
+.blog-card-meta{
+  font-size:0.75rem;color:var(--color-muted);
+  margin-bottom:var(--space-xs);
+  padding-bottom:var(--space-xs);
+  border-bottom:2px solid var(--color-accent);
+  display:inline-block;
 }
-.blog-card-media img{
-  width:100%;height:180px;object-fit:cover;display:block;
-  transition:transform .45s var(--ease-out);
-}
-.blog-card:hover .blog-card-media img{transform:scale(1.05)}
 .blog-card-excerpt{
   color:var(--color-muted);
   margin:0;
-  padding:0 var(--space-md) var(--space-md);
-  font-size:0.88rem;line-height:1.6;
+  font-size:0.85rem;line-height:1.55;
+}
+.blog-card-link{
+  color:var(--color-accent);
+  font-size:0.82rem;font-weight:600;
+  margin-top:var(--space-xs);
+  display:inline-block;
+  transition:color .2s;
+}
+.blog-card:hover .blog-card-link{color:var(--color-ink)}
+
+@media(max-width:700px){
+  .blog-card{flex-direction:column}
+  .blog-card-media{flex:0 0 200px;min-height:200px}
+  .blog-card-media img{position:static;height:200px}
 }
 
 /* ===== CAPABILITIES ===== */
@@ -735,30 +759,36 @@ html.theme-light{color-scheme:light}
   <p style="font-size:0.85rem;color:var(--color-muted);margin-bottom:var(--space-lg)"><span lang="vi">Cập nhật: 2026-07-21 · Hướng dẫn thực tế cho thương hiệu thời trang, streetwear và startup muốn tìm gia công túi balo tại Việt Nam.</span><span lang="en">Last updated: 2026-07-21 · Practical guides for fashion brands, streetwear labels, and startups sourcing custom bags from Vietnam.</span></p>
 
   <a class="blog-card" href="blog-oem-bag-vietnam.html">
-    <span class="blog-card-cat"><span lang="vi">TÌM NGUỒN &middot; OEM/ODM</span><span lang="en">SOURCING &middot; OEM/ODM</span></span>
-    <h3 class="blog-card-title"><span lang="vi">Hướng Dẫn Tìm Xưởng OEM Túi Balo Tại Việt Nam</span><span lang="en">OEM Bag Manufacturer Vietnam: How to Source Custom Bags &amp; Backpacks</span></h3>
-    <div class="blog-card-media">
-      <img src="images/og-image.png" alt="OEM Bag Manufacturing" loading="lazy">
+    <div class="blog-card-media"><img src="images/og-image.png" alt="OEM Bag Manufacturing" loading="lazy"></div>
+    <div class="blog-card-body">
+      <span class="blog-card-cat"><span lang="vi">TÌM NGUỒN · OEM/ODM</span><span lang="en">SOURCING · OEM/ODM</span></span>
+      <h3 class="blog-card-title"><span lang="vi">Hướng Dẫn Tìm Xưởng OEM Túi Balo Tại Việt Nam</span><span lang="en">OEM Bag Manufacturer Vietnam: How to Source Custom Bags &amp; Backpacks</span></h3>
+      <span class="blog-card-meta">Minh Tùng Studio · 2026-07-16</span>
+      <p class="blog-card-excerpt"><span lang="vi">Tìm hiểu quy trình làm việc với xưởng OEM túi balo, MOQ và thời gian sản xuất, so sánh OEM vs ODM, và cách MTS sản xuất từ 300 sản phẩm tại TP.HCM.</span><span lang="en">What an OEM bag factory does, MOQ and lead-time expectations, OEM vs ODM, and how MTS produces bags from 300 pieces in Ho Chi Minh City.</span></p>
+      <span class="blog-card-link">Read more →</span>
     </div>
-    <p class="blog-card-excerpt"><span lang="vi">Tìm hiểu quy trình làm việc với xưởng OEM túi balo, MOQ và thời gian sản xuất, so sánh OEM vs ODM, và cách MTS sản xuất từ 300 sản phẩm tại TP.HCM.</span><span lang="en">What an OEM bag factory does, MOQ and lead-time expectations, OEM vs ODM, and how MTS produces bags from 300 pieces in Ho Chi Minh City.</span></p>
   </a>
 
   <a class="blog-card" href="blog-start-bag-brand.html">
-    <span class="blog-card-cat"><span lang="vi">KHỞI NGHIỆP &middot; XÂY DỰNG THƯƠNG HIỆU</span><span lang="en">FOUNDERS &middot; START A BRAND</span></span>
-    <h3 class="blog-card-title"><span lang="vi">Cách Bắt Đầu Thương Hiệu Túi Balo Năm 2026</span><span lang="en">How to Start a Bag Brand in 2026: A Founder&apos;s Step-by-Step Guide</span></h3>
-    <div class="blog-card-media">
-      <img src="images/product-backpack-1.png" alt="Custom bag brand manufacturing" loading="lazy">
+    <div class="blog-card-media"><img src="images/product-backpack-1.png" alt="Custom bag brand manufacturing" loading="lazy"></div>
+    <div class="blog-card-body">
+      <span class="blog-card-cat"><span lang="vi">KHỞI NGHIỆP · XÂY DỰNG THƯƠNG HIỆU</span><span lang="en">FOUNDERS · START A BRAND</span></span>
+      <h3 class="blog-card-title"><span lang="vi">Cách Bắt Đầu Thương Hiệu Túi Balo Năm 2026</span><span lang="en">How to Start a Bag Brand in 2026: A Founder&apos;s Step-by-Step Guide</span></h3>
+      <span class="blog-card-meta">Minh Tùng Studio · 2026-07-16</span>
+      <p class="blog-card-excerpt"><span lang="vi">Từ ý tưởng và techpack đến lấy mẫu, sản xuất và ra mắt — với dịch vụ OEM/ODM Việt Nam MOQ thấp (300 sản phẩm, mẫu miễn phí).</span><span lang="en">From niche and techpack to sampling, manufacturing, and launch with low-MOQ Vietnam OEM/ODM sourcing (MOQ 300, free sample).</span></p>
+      <span class="blog-card-link">Read more →</span>
     </div>
-    <p class="blog-card-excerpt"><span lang="vi">Từ ý tưởng và techpack đến lấy mẫu, sản xuất và ra mắt — với dịch vụ OEM/ODM Việt Nam MOQ thấp (300 sản phẩm, mẫu miễn phí).</span><span lang="en">From niche and techpack to sampling, manufacturing, and launch with low-MOQ Vietnam OEM/ODM sourcing (MOQ 300, free sample).</span></p>
   </a>
 
   <a class="blog-card" href="blog-tuyen-dung.html">
-    <span class="blog-card-cat"><span lang="vi">TUYỂN DỤNG &middot; RECRUITMENT</span><span lang="en">TUYỂN DỤNG &middot; RECRUITMENT</span></span>
-    <h3 class="blog-card-title"><span lang="vi">Tuyển Dụng — Xưởng May Túi Balo MTS | Recruitment at Minh Tùng Studio</span><span lang="en">Recruitment — MTS Bag Factory | Minh Tùng Studio</span></h3>
-    <div class="blog-card-media">
-      <img src="images/hero-factory-floor.png" alt="MTS factory recruitment" loading="lazy">
+    <div class="blog-card-media"><img src="images/hero-factory-floor.png" alt="MTS factory recruitment" loading="lazy"></div>
+    <div class="blog-card-body">
+      <span class="blog-card-cat"><span lang="vi">TUYỂN DỤNG · RECRUITMENT</span><span lang="en">TUYỂN DỤNG · RECRUITMENT</span></span>
+      <h3 class="blog-card-title"><span lang="vi">Tuyển Dụng — Xưởng May Túi Balo MTS | Recruitment at Minh Tùng Studio</span><span lang="en">Recruitment — MTS Bag Factory | Minh Tùng Studio</span></h3>
+      <span class="blog-card-meta">Minh Tùng Studio · 2026-07-21</span>
+      <p class="blog-card-excerpt"><span lang="vi">Tuyển thợ kỹ thuật mẫu dập, thợ may, thợ quay gân ráp hàng và thợ phụ tại xưởng OEM/ODM túi balo MTS, TP.HCM.</span><span lang="en">Hiring pattern technicians, sewing workers, edge-stitching assemblers, and helpers at MTS OEM/ODM bag factory, HCMC. Stable income, full Tet bonuses.</span></p>
+      <span class="blog-card-link">Read more →</span>
     </div>
-    <p class="blog-card-excerpt"><span lang="vi">Tuyển thợ kỹ thuật mẫu dập, thợ may, thợ quay gân ráp hàng và thợ phụ tại xưởng OEM/ODM túi balo MTS, TP.HCM.</span><span lang="en">Hiring pattern technicians, sewing workers, edge-stitching assemblers, and helpers at MTS OEM/ODM bag factory, HCMC. Stable income, full Tet bonuses.</span></p>
   </a>
 
   <p style="margin-top:var(--space-lg)"><a href="index.html#contact" style="color:var(--color-accent);border-bottom:1px solid var(--color-accent)">Talk to MTS about your bag line &rarr;</a></p>
