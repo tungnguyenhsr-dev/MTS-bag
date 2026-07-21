@@ -1,130 +1,156 @@
-# MTS Website — Framework Rules for AI Coding Agents
+# MTS Website — Framework Rules (AI Agents MUST Read)
 
-> **READ THIS BEFORE EDITING ANY FILE.**
-> Violating these rules = broken site. Zero tolerance.
+> **CRITICAL**: This site uses **inline CSS** in `<style>` tags, NOT external files.
+> `assets/mts.css` and `assets/mts.js` do NOT exist as loaded files.
+> Violating these rules = broken UI. Zero tolerance.
 
----
+## Stack
 
-## 1. Stack — Static HTML Only
+- **Static HTML only** — vanilla HTML/CSS/JS, no frameworks
+- **CSS**: ALL inline in `<style>` tag inside `index.html`. Not a separate file.
+- **JS**: ALL inline in `<script>` tags at bottom of `index.html`. Not a separate file.
+- **Images**: `/images/` directory.
+- **No build step**, no npm, no React/Vue/Svelte, no package.json.
+- **Deploy**: Vercel auto-deploy from `master` branch.
 
-- **No framework.** Pure vanilla HTML + CSS + JS.
-- **No build step.** No npm, no webpack, no React/Vue/Svelte.
-- **No backend.** Static files served via Vercel/GitHub Pages.
-- **Do NOT add** any package.json, bundler, framework, or dependency.
-- **Do NOT change** file extensions (.html → .jsx, etc.).
-
-## 2. Design Tokens (RO — Read Only)
-
-Defined in `assets/mts.css` `:root`. Never change these values:
+## Design Tokens (DO NOT CHANGE)
 
 ```
---color-bg:       #F5F0EB    (cream)
---color-surface:  #FFFFFF    (card)
---color-ink:      #1A1A1A    (text)
---color-accent:   #C8A96E    (gold — single accent color)
---color-muted:    #6B6258    (secondary text)
---section-dark:   #1A1A1A    (dark section bg)
---color-on-dark:  #FFFFFF    (text on dark)
-
+--color-bg:       #F5F0EB  (cream)
+--color-surface:  #FFFFFF  (card/box)
+--color-ink:      #1A1A1A  (text)
+--color-accent:   #C8A96E  (gold — single accent color)
+--color-muted:    #6B6258  (secondary)
+--color-border:   #E2D9CC
 --font-sans:      'Inter', system-ui, sans-serif
---font-mono:      'JetBrains Mono', ui-monospace, monospace
+--font-mono:      'JetBrains Mono', monospace
 ```
 
-**Do NOT:**
-- Add new colors / brand colors.
-- Change existing color values.
-- Add CSS frameworks (Tailwind, Bootstrap).
+All CSS custom properties: colors, spacing (`--space-xs/sm/md/lg/xl/2xl`), radius (`--radius-sm/md/lg/section`), elevation (`--elevation-0/1/2/3`), motion/easing.
 
-## 3. File Structure
+## New Page = Clone `index.html`
 
-```
-index.html                  ← Homepage (single page app — all content here)
-blog.html                   ← Blog listing
-blog-oem-bag-vietnam.html   ← Blog post 1
-blog-start-bag-brand.html   ← Blog post 2
-assets/
-  mts.css                   ← ALL styles (single file, ~780 lines)
-  mts.js                    ← JS (theme toggle, language toggle, nav)
-  favicon.svg
-  mts-logo-dark.svg
-  mts-logo-light.svg
-images/                     ← Product & factory images (10+ PNG files)
-```
+**Never build from scratch.** Always:
+1. Copy `index.html`
+2. Replace meta tags (title, desc, OG, canonical, keywords, JSON-LD)
+3. Change nav links: `href="#section"` → `href="index.html#section"`
+4. Replace content between `</nav>` and `<!-- ===== FOOTER ===== -->`
+5. Keep CSS, JS, nav, footer 100% intact
 
-**Do NOT:**
-- Split CSS into multiple files.
-- Create new .js files unless absolutely necessary.
-- Delete or rename existing assets.
+## Blog Cards — Horizontal Layout
 
-## 4. HTML Structure Rules
-
-### Sections (in order)
-```
-NAV (#hero sticky nav)
-HERO (#hero)
-TRUST STRIP (#trust)
-CAPABILITIES (#capabilities)
-SERVICES (#services)
-PRODUCTS (#products, optional)
-QC (#quality)
-BLOG (#blog — latest articles, optional)
-CTA (#cta)
-CONTACT (#contact)
-FOOTER (#footer)
+```html
+<a class="blog-card" href="blog-post.html">
+  <div class="blog-card-media"><img src="images/..." alt="..." loading="lazy"></div>
+  <div class="blog-card-body">
+    <span class="blog-card-cat"><span lang="vi">VI</span><span lang="en">EN</span></span>
+    <h3 class="blog-card-title"><span lang="vi">...</span><span lang="en">...</span></h3>
+    <span class="blog-card-meta">MTS · YYYY-MM-DD</span>
+    <p class="blog-card-excerpt">bilingual</p>
+    <span class="blog-card-link">Đọc tiếp → / Read more →</span>
+  </div>
+</a>
 ```
 
-### Built-in Patterns
-- **Bilingual:** Every content block has `<tag lang="vi">` + `<tag lang="en">`. JS `#langToggle` shows/hides based on active language.
-- **Dark sections:** hero, trust strip, cta, blog hero use `background: var(--section-dark); color: var(--color-on-dark);`
-- **Reveal animation:** Key sections have `class="section-inner reveal"`. JS `.reveal` is already handled — don't remove or replace.
-- **Mono labels:** Each section starts with `<span class="mono-label">XX — NAME</span>`.
-- **Horizontal divider:** `<hr class="divider">` separates major sections.
-- **Buttons:** `.btn-primary` (gold bg + ink text), `.btn-secondary` (outline).
+Available CSS: `.blog-card`, `.blog-card-media`, `.blog-card-body`, `.blog-card-cat`, `.blog-card-title`, `.blog-card-meta`, `.blog-card-excerpt`, `.blog-card-link`
 
-### Do NOT
-- Remove `<hr class="divider">` between sections.
-- Remove `class="reveal"` from section wrappers.
-- Merge or delete section IDs.
-- Change section ordering.
-- Remove bilingual structure (VI/EN pairs).
+## Bilingual (EN/VI Toggle)
 
-## 5. CSS Rules
+- **All visible text** must have `<span lang="vi">` and `<span lang="en">`
+- CSS: `body:not(.show-en) [lang="en"]{display:none}` / `body.show-en [lang="vi"]{display:none}`
+- Nav, cards, blog content, tables, CTAs — everything needs both languages
+- Test toggle after every edit
 
-- All styles in `assets/mts.css` (~780 lines, single file).
-- Uses CSS custom properties (design tokens) — do NOT hardcode colors/fonts.
-- BEM-like naming but not strict — match existing patterns.
-- Radius: inner 8px, interactive 12px, container/card 16px, section 32px.
-- Elevation: 1px border for default, subtle shadow for cards.
+## Content CSS Classes (pre-defined)
 
-**Do NOT:**
-- Use !important.
-- Add inline styles in HTML.
-- Add new CSS files.
-- Override design tokens.
+| Class | Purpose |
+|-------|---------|
+| `.wrap` | Article container (760px max) |
+| `.def` | Definition box (gold bg) |
+| `.cta` | Call-to-action box (ink bg) |
+| `p.meta` | Small date/author |
+| `p.lead` | Larger intro paragraph |
+| `.lang-note` | Language note at bottom |
+| `.mono-label` | Section label |
+| `.divider` | Section separator |
+| `.lead-time-table` | Data table |
 
-## 6. JS Rules
+## Tables
 
-- All JS in `assets/mts.js`.
-- Features: theme toggle (🌙/☀️), language toggle (VI/EN), mobile nav hamburger, .reveal intersection observer, smooth scroll.
-- **Do NOT** add jQuery, Alpine.js, or any JS library.
-- **Do NOT** remove existing JS functionality.
+```html
+<table class="lead-time-table">
+  <thead><tr><th>bilingual</th><th>...</th></tr></thead>
+  <tbody>
+    <tr><td>bilingual</td><td>...</td></tr>
+  </tbody>
+</table>
+```
 
-## 7. Content Editing Rules
+CSS handles alternating rows, gold hover, uppercase headers.
 
-When editing content:
-1. **KEEP the HTML structure intact.** Only change text inside `<p>`, `<h1>`, `<h2>`, `<span>`, `<div>` — do NOT change classes or nesting.
-2. **Maintain bilingual pairs.** Every VI block has an EN counterpart.
-3. **Brand positioning:** OEM bag/backpack manufacturer, B2B only, Vietnam-based. Forbidden: "bespoke", "tailoring", "couture", "made-to-measure", "retail", "B2C".
-4. **GA4 ID:** `G-XXXXXXXXXX` — placeholder. Replace only with real Measurement ID from Tommy.
-5. **Images:** `images/*.png` are product/factory photos. Do NOT delete references even if image is placeholder.
+## Blog Post Page Requirements
 
-## 8. Git Rules
+- Full nav/footer from index.html template
+- Back-to-blog link: `← Back to Blog` / `← Về trang Blog`
+- Featured image at top (full-width, border-radius)
+- Bilingual content (all text)
+- JSON-LD BlogPosting schema
 
-- Only push to `master` branch.
-- Commit messages: `type: scope — description` (e.g. `feat: blog — add OEM guide post`).
-- **No force push.**
-- Verify site renders locally before committing.
+## Blog Post Content Required Elements
+
+[Copied from nhaxuong content — use as workflow reference, NOT literal template]
+
+The following checklist applies to **every blog post**:
+
+### Front-matter / Metadata
+- [ ] Title (bilingual)
+- [ ] Date (Việt: "Đăng ngày ...", English: "Published ...")
+- [ ] Featured image (full-width, border-radius)
+
+### Body Structure
+- [ ] Lead paragraph (bilingual, introduces the topic)
+- [ ] Section headings (h2, bilingual)
+- [ ] Body text (p, bilingual)
+- [ ] Bullet/numbered lists where appropriate (bilingual)
+- [ ] Tables where data comparison is needed (class="lead-time-table")
+- [ ] Definition boxes (.def) for key concepts
+- [ ] FAQ section (if applicable)
+- [ ] Call-to-action box (.cta) at the bottom
+- [ ] Internal links to other pages
+
+### Tone & Positioning
+- Target: brand nội địa (domestic Vietnamese brands)
+- USP: thiết kế tư vấn mẫu + MOQ từ 100pcs
+- NOT: tariffs, xuất khẩu, export logistics
+- NOT: "bespoke", "tailoring", "couture", "made-to-measure", "B2C", "retail"
+
+### SEO
+- [ ] Unique meta title (55-65 chars)
+- [ ] Unique meta description (120-160 chars)
+- [ ] Canonical URL
+- [ ] Open Graph tags (title, description, url)
+- [ ] Twitter Card tags
+- [ ] Keywords tag
+- [ ] JSON-LD schema (BlogPosting or Article)
+
+## Git
+
+```bash
+git push origin master
+```
+
+## DO NOT
+
+- ❌ Link to `assets/mts.css` or `assets/mts.js` — CSS/JS are **inline** in the HTML
+- ❌ Use inline styles when CSS classes exist
+- ❌ Forget `lang="vi"` + `lang="en"` on all visible text
+- ❌ Forget back-to-blog link + featured image on posts
+- ❌ Modify `index.html` nav links (they use `#section` for same-page scroll)
+- ❌ Push with default credential helper (times out) — use `-c credential.helper=` bypass
+- ❌ Use HTML entities in string replace — file uses real Unicode (e.g. `Tùng`, not `T&ugrave;ng`)
+- ❌ Forget blog content CSS classes (`.wrap`, `.def`, `.cta`) — must be added to style block
+- ❌ Let AI edit HTML without reading this file first
 
 ---
 
-*Generated 2026-07-21. Last updated by Hermes Agent.*
+*Last updated: 2026-07-21*
