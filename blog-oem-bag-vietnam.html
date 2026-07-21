@@ -438,11 +438,12 @@ p.lead{font-size:1.1rem;line-height:1.6}
   width:100%;border-collapse:collapse;margin-top:var(--space-md);
   font-size:0.85rem;
 }
-.lead-time-table th,.lead-time-table td{
-  padding:10px var(--space-sm);text-align:left;border-bottom:1px solid var(--border);
-}
-.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem}
-.lead-time-table td{color:var(--muted)}
+.lead-time-table{width:100%;border-collapse:collapse;margin:var(--space-md) 0;font-size:0.9rem}
+.lead-time-table th,.lead-time-table td{padding:var(--space-sm);text-align:left;border-bottom:1px solid var(--color-border)}
+.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem;letter-spacing:0.05em;background:var(--accent)}
+.lead-time-table td{color:var(--color-text)}
+.lead-time-table tbody tr:nth-child(even){background:var(--accent)}
+.lead-time-table tbody tr:hover{background:var(--color-accent);color:var(--color-ink)}
 
 /* ===== PRODUCTS ===== */
 #products{background:var(--accent)}
@@ -798,7 +799,7 @@ html.theme-light{color-scheme:light}
   </ul>
 
   <h2><span lang="vi">Quy trình sản xuất điển hình (OEM/ODM)</span><span lang="en">Typical production timeline (OEM/ODM)</span></h2>
-  <table class="leadtime-table">
+  <table class="lead-time-table">
     <thead><tr><th><span lang="vi">Giai đoạn</span><span lang="en">Stage</span></th><th><span lang="vi">Thời gian</span><span lang="en">Time</span></th></tr></thead>
     <tbody>
       <tr><td><span lang="vi">Yêu cầu &amp; xem xét</span><span lang="en">Inquiry &amp; review</span></td><td><span lang="vi">1–2 ngày</span><span lang="en">1–2 days</span></td></tr>
@@ -811,7 +812,7 @@ html.theme-light{color-scheme:light}
   <p class="lang-note"><span lang="vi">Thời gian sản xuất thay đổi theo chất liệu và độ phức tạp. Túi tote canvas có thể 10–18 ngày; balo có cấu trúc thường 20–25 ngày.</span><span lang="en">Lead times vary by material and order complexity. Totes in canvas can run 10–18 days; structured backpacks typically 20–25 days.</span></p>
 
   <h2><span lang="vi">OEM vs ODM: bạn cần loại nào?</span><span lang="en">OEM vs ODM: which do you need?</span></h2>
-  <table class="leadtime-table">
+  <table class="lead-time-table">
     <thead><tr><th></th><th>OEM</th><th>ODM</th></tr></thead>
     <tbody>
       <tr><td><span lang="vi">Bạn cung cấp</span><span lang="en">You provide</span></td><td><span lang="vi">Techpack / mẫu tham khảo</span><span lang="en">Techpack / reference sample</span></td><td><span lang="vi">Brief &amp; ý tưởng</span><span lang="en">Brief &amp; concept</span></td></tr>

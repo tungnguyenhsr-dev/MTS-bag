@@ -438,11 +438,12 @@ p.lead{font-size:1.1rem;line-height:1.6}
   width:100%;border-collapse:collapse;margin-top:var(--space-md);
   font-size:0.85rem;
 }
-.lead-time-table th,.lead-time-table td{
-  padding:10px var(--space-sm);text-align:left;border-bottom:1px solid var(--border);
-}
-.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem}
-.lead-time-table td{color:var(--muted)}
+.lead-time-table{width:100%;border-collapse:collapse;margin:var(--space-md) 0;font-size:0.9rem}
+.lead-time-table th,.lead-time-table td{padding:var(--space-sm);text-align:left;border-bottom:1px solid var(--color-border)}
+.lead-time-table th{font-weight:600;color:var(--color-ink);text-transform:uppercase;font-size:0.75rem;letter-spacing:0.05em;background:var(--accent)}
+.lead-time-table td{color:var(--color-text)}
+.lead-time-table tbody tr:nth-child(even){background:var(--accent)}
+.lead-time-table tbody tr:hover{background:var(--color-accent);color:var(--color-ink)}
 
 /* ===== PRODUCTS ===== */
 #products{background:var(--accent)}
