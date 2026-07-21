@@ -294,6 +294,16 @@ section{padding:var(--space-2xl) var(--space-md)}
   font-size:0.85rem;font-weight:600;color:var(--muted);
 }
 
+/* ===== BLOG CARDS ===== */
+.blog-card{display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-md);margin:var(--space-sm) 0;background:var(--color-surface);text-decoration:none;transition:border-color .2s;overflow:hidden}
+.blog-card:hover{border-color:var(--gold)}
+.blog-card-cat{display:block;font-family:var(--font-mono);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-xs)}
+.blog-card-title{font-size:1.15rem;font-weight:700;color:var(--color-ink);margin:0 0 var(--space-xs);line-height:1.35}
+.blog-card-media{margin:calc(-1 * var(--space-md)) calc(-1 * var(--space-md)) var(--space-sm);overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.blog-card-media img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .4s var(--ease-out)}
+.blog-card:hover .blog-card-media img{transform:scale(1.03)}
+.blog-card-excerpt{color:var(--color-muted);margin:0;font-size:0.9rem;line-height:1.55}
+
 /* ===== CAPABILITIES ===== */
 #capabilities{background:var(--accent)}
 .caps-grid{
@@ -689,25 +699,31 @@ html.theme-light{color-scheme:light}
   <h1 style="font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;margin-bottom:var(--space-sm);letter-spacing:-0.02em">MTS Blog &mdash; Bag Manufacturing Guides</h1>
   <p style="font-size:0.85rem;color:var(--color-muted);margin-bottom:var(--space-lg)">Last updated: 2026-07-21 &middot; Practical guides for fashion brands, streetwear labels, and startups sourcing custom bags from Vietnam.</p>
 
-  <a class="card" href="blog-oem-bag-vietnam.html" style="display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-md);margin:var(--space-sm) 0;background:var(--color-surface);text-decoration:none;transition:border-color .2s">
-    <span class="mono-label" style="font-size:0.7rem;letter-spacing:0.1em;color:var(--color-accent);margin-bottom:var(--space-xs)">SOURCING &middot; OEM/ODM</span>
-    <h2 style="font-size:1.3rem;margin:0 0 var(--space-xs);color:var(--color-ink)">OEM Bag Manufacturer Vietnam: How to Source Custom Bags &amp; Backpacks</h2>
-    <img src="images/og-image.png" alt="OEM Bag Manufacturing" style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm)">
-    <p style="color:var(--color-muted);margin:0;font-size:0.95rem">What an OEM bag factory does, MOQ and lead-time expectations, OEM vs ODM, and how MTS produces bags from 300 pieces in Ho Chi Minh City.</p>
+  <a class="blog-card" href="blog-oem-bag-vietnam.html">
+    <span class="blog-card-cat">SOURCING &middot; OEM/ODM</span>
+    <h3 class="blog-card-title">OEM Bag Manufacturer Vietnam: How to Source Custom Bags &amp; Backpacks</h3>
+    <div class="blog-card-media">
+      <img src="images/og-image.png" alt="OEM Bag Manufacturing" loading="lazy">
+    </div>
+    <p class="blog-card-excerpt">What an OEM bag factory does, MOQ and lead-time expectations, OEM vs ODM, and how MTS produces bags from 300 pieces in Ho Chi Minh City.</p>
   </a>
 
-  <a class="card" href="blog-start-bag-brand.html" style="display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-md);margin:var(--space-sm) 0;background:var(--color-surface);text-decoration:none;transition:border-color .2s">
-    <span class="mono-label" style="font-size:0.7rem;letter-spacing:0.1em;color:var(--color-accent);margin-bottom:var(--space-xs)">FOUNDERS &middot; START A BRAND</span>
-    <h2 style="font-size:1.3rem;margin:0 0 var(--space-xs);color:var(--color-ink)">How to Start a Bag Brand in 2026: A Founder&apos;s Step-by-Step Guide</h2>
-    <img src="images/product-backpack-1.png" alt="Custom bag brand manufacturing" style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm)">
-    <p style="color:var(--color-muted);margin:0;font-size:0.95rem">From niche and techpack to sampling, manufacturing, and launch with low-MOQ Vietnam OEM/ODM sourcing (MOQ 300, free sample).</p>
+  <a class="blog-card" href="blog-start-bag-brand.html">
+    <span class="blog-card-cat">FOUNDERS &middot; START A BRAND</span>
+    <h3 class="blog-card-title">How to Start a Bag Brand in 2026: A Founder&apos;s Step-by-Step Guide</h3>
+    <div class="blog-card-media">
+      <img src="images/product-backpack-1.png" alt="Custom bag brand manufacturing" loading="lazy">
+    </div>
+    <p class="blog-card-excerpt">From niche and techpack to sampling, manufacturing, and launch with low-MOQ Vietnam OEM/ODM sourcing (MOQ 300, free sample).</p>
   </a>
 
-  <a class="card" href="blog-tuyen-dung.html" style="display:block;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-md);margin:var(--space-sm) 0;background:var(--color-surface);text-decoration:none;transition:border-color .2s">
-    <span class="mono-label" style="font-size:0.7rem;letter-spacing:0.1em;color:var(--color-accent);margin-bottom:var(--space-xs)">TUY&#x1EC2;N D&#x1EE4;NG &middot; RECRUITMENT</span>
-    <h2 style="font-size:1.3rem;margin:0 0 var(--space-xs);color:var(--color-ink)">Tuy&#x1EC3;n D&#x1EE5;ng &mdash; X&#x1B0;&#x1EDF;ng May T&uacute;i Balo MTS | Recruitment at Minh T&ugrave;ng Studio</h2>
-    <img src="images/hero-factory-floor.png" alt="MTS factory recruitment" style="width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm)">
-    <p style="color:var(--color-muted);margin:0;font-size:0.95rem">Tuy&#x1EC3;n th&#x1EE3; k&#x1EF9; thu&#x1EAD;t m&#x1EAB;u d&#x1EAD;p, th&#x1EE3; may, th&#x1EE3; quay g&acirc;n r&aacute;p h&agrave;ng v&agrave; th&#x1EE3; ph&#x1EE5; t&#x1EA1;i x&#x1B0;&#x1EDF;ng OEM/ODM t&uacute;i balo MTS, TP.HCM.</p>
+  <a class="blog-card" href="blog-tuyen-dung.html">
+    <span class="blog-card-cat">TUY&#x1EC2;N D&#x1EE4;NG &middot; RECRUITMENT</span>
+    <h3 class="blog-card-title">Tuy&#x1EC3;n D&#x1EE5;ng &mdash; X&#x1B0;&#x1EDF;ng May T&uacute;i Balo MTS | Recruitment at Minh T&ugrave;ng Studio</h3>
+    <div class="blog-card-media">
+      <img src="images/hero-factory-floor.png" alt="MTS factory recruitment" loading="lazy">
+    </div>
+    <p class="blog-card-excerpt">Tuy&#x1EC3;n th&#x1EE3; k&#x1EF9; thu&#x1EAD;t m&#x1EAB;u d&#x1EAD;p, th&#x1EE3; may, th&#x1EE3; quay g&acirc;n r&aacute;p h&agrave;ng v&agrave; th&#x1EE3; ph&#x1EE5; t&#x1EA1;i x&#x1B0;&#x1EDF;ng OEM/ODM t&uacute;i balo MTS, TP.HCM.</p>
   </a>
 
   <p style="margin-top:var(--space-lg)"><a href="index.html#contact" style="color:var(--color-accent);border-bottom:1px solid var(--color-accent)">Talk to MTS about your bag line &rarr;</a></p>
