@@ -97,8 +97,8 @@ flow = []
 flow.append(Spacer(1, 18*mm))
 flow.append(Paragraph("MINH TÙNG STUDIO", st_title))
 flow.append(Spacer(1, 3*mm))
-flow.append(Paragraph("Gia công túi / balo tại Việt Nam — từ 300 sản phẩm", st_sub))
-flow.append(Paragraph("Custom bag &amp; backpack manufacturing in Vietnam — from 300 pieces", st_sub))
+flow.append(Paragraph("Gia công túi / balo tại Việt Nam — tư vấn mẫu miễn phí, MOQ từ 100", st_sub))
+flow.append(Paragraph("Custom bag &amp; backpack manufacturing in Vietnam — free design consult, MOQ from 100", st_sub))
 flow.append(Spacer(1, 8*mm))
 flow.append(hr())
 flow.append(Paragraph("01 — GIỚI THIỆU / ABOUT", st_mono))
@@ -112,8 +112,8 @@ flow.append(Paragraph(
     "not a trading company — we cut, sew, print, emboss, QC, and pack under one roof.", st_body_en))
 flow.append(Spacer(1, 6*mm))
 # stats strip
-stats = [["6+", "50K+", "300"],
-         ["Thương hiệu / Brands", "Sản phẩm/năm / Units per year", "MOQ"]]
+stats = [["6+", "50K+", "100"],
+         ["Thương hiệu / Brands", "Sản phẩm/năm / Units per year", "MOQ (từ / from)"]]
 t = Table(stats, colWidths=[content_w/3.0]*3)
 t.setStyle(TableStyle([
     ("FONTNAME", (0,0), (-1,0), "Arial-Bold"),
@@ -186,7 +186,7 @@ flow.append(Paragraph("03 — NĂNG LỰC & QUY TRÌNH / CAPABILITIES & PROCESS"
 caps = [
     ("Sản phẩm / Products", "Backpack, Sling, Duffel, Tote, Phụ kiện da."),
     ("Nguyên liệu / Materials", "Da thật, da PU, Canvas, Nylon, Polyester, phụ kiện kim loại."),
-    ("Phát triển / Development", "Techpack → Mẫu thử → Sản xuất. MOQ 300 / 1000."),
+    ("Phát triển / Development", "Brief → Thiết kế → Mẫu thử → Sản xuất. Tư vấn mẫu miễn phí, 3 lần chỉnh sửa. MOQ 100 / 300 / 500 / 1000."),
     ("Chất lượng / Quality", "QC nội bộ AQL 2.5. Báo cáo từng lô. Ảnh trước khi giao."),
 ]
 data = [[Paragraph(a, S("k", fontName="Arial-Bold", fontSize=10, textColor=GOLD)),
@@ -256,8 +256,8 @@ flow.append(hr())
 flow.append(Paragraph("05 — LIÊN HỆ / CONTACT", st_mono))
 contact_tbl = Table([
     [Paragraph("Email", st_cap), Paragraph("tungnguyenhsr@gmail.com", st_body)],
-    [Paragraph("Zalo / Phone (Tùng)", st_cap), Paragraph("+84 773 108 320", st_body)],
-    [Paragraph("WhatsApp (Lâm)", st_cap), Paragraph("+84 979 768 997", st_body)],
+    [Paragraph("Zalo / Phone (Lâm)", st_cap), Paragraph("+84 979 768 997", st_body)],
+    [Paragraph("WhatsApp (Tùng)", st_cap), Paragraph("+84 773 108 320", st_body)],
     [Paragraph("Địa chỉ / Address", st_cap), Paragraph("TP.HCM, Vietnam", st_body)],
 ], colWidths=[content_w*0.35, content_w*0.65])
 contact_tbl.setStyle(TableStyle([
