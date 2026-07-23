@@ -21,4 +21,4 @@ Allow: /
 # User-agent: CCBot
 # Disallow: /
 
-Sitemap: https://mtsbag.vercel.app/sitemap.xml
+Sitemap: https://mts-bag.vercel.app/sitemap.xml
