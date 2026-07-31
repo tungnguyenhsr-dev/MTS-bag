@@ -6,22 +6,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mts-bag.vercel.app/blog</loc>
+    <loc>https://mts-bag.vercel.app/blog.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mts-bag.vercel.app/blog-oem-bag-vietnam</loc>
+    <loc>https://mts-bag.vercel.app/blog-oem-bag-vietnam.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mts-bag.vercel.app/blog-start-bag-brand</loc>
+    <loc>https://mts-bag.vercel.app/blog-start-bag-brand.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mts-bag.vercel.app/blog-tuyen-dung</loc>
+    <loc>https://mts-bag.vercel.app/blog-sampling-process.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mts-bag.vercel.app/blog-tuyen-dung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
